@@ -1,73 +1,73 @@
 1. PROJETO
 
 Equipe
-Lilian, Leonardo, Rafaela, Lilian, Rogério e Osmario
+Lilian, Leonardo, Rafaela, Lilian, RogÃ©rio e Osmario
 
 Levantamento do trabalho:
-- Engenharia de Software | Ciclo de Vida do Software (Documentação, Análise, Projeto, Implementação e Implantação).
+- Engenharia de Software | Ciclo de Vida do Software (DocumentaÃ§Ã£o, AnÃ¡lise, Projeto, ImplementaÃ§Ã£o e ImplantaÃ§Ã£o).
 
 Requisitos ou Tema do Projeto
-- Uma Vídeo Locadora Imperial
+- Uma VÃ­deo Locadora Imperial
 
-Prazos e exigências
+Prazos e exigÃªncias
 - Entrega por Email 
-- Contendo informações do repositório
-- Um release formal no repositório
-- Data Final (Não definido)
+- Contendo informaÃ§Ãµes do repositÃ³rio
+- Um release formal no repositÃ³rio
+- Data Final (NÃ£o definido)
 - Proposta do projeto com seus artefatos
-  *(Código fonte, imagens, arquivos de configuração, scripts, documentações de apoio, controle de versão, compartilhamento do GitHub, rastreabilidade do ciclo de vida, implantação no serviço PaaS (Ex: Heroku) ou IaaS (Ex: AWS,Google Cloud), entre outras coisas e relatório técnico final)
-  *Relatório Final (Contextualização, escopo, tomadas de decisão, documentação da arquitetura da solução e etc)
+  *(CÃ³digo fonte, imagens, arquivos de configuraÃ§Ã£o, scripts, documentaÃ§Ãµes de apoio, controle de versÃ£o, compartilhamento do GitHub, rastreabilidade do ciclo de vida, implantaÃ§Ã£o no serviÃ§o PaaS (Ex: Heroku) ou IaaS (Ex: AWS,Google Cloud), entre outras coisas e relatÃ³rio tÃ©cnico final)
+  *RelatÃ³rio Final (ContextualizaÃ§Ã£o, escopo, tomadas de decisÃ£o, documentaÃ§Ã£o da arquitetura da soluÃ§Ã£o e etc)
 
 2. LISTA DE ARTEFATOS AVALIATIVOS
 
-2.1 Repositório do Projeto
-- Documentação do projeto com todo seu ciclo de vida versionado e rastreado no GitHub
-- Relatório Técnico contendo Apresentação do Projeto no GitHub
+2.1 RepositÃ³rio do Projeto
+- DocumentaÃ§Ã£o do projeto com todo seu ciclo de vida versionado e rastreado no GitHub
+- RelatÃ³rio TÃ©cnico contendo ApresentaÃ§Ã£o do Projeto no GitHub
 
-2.2 Criar página de readme/inicial com seguintes elementos:
+2.2 Criar pÃ¡gina de readme/inicial com seguintes elementos:
 - Nome do Projeto
 - Justificativa do projeto
-- Descrição do produto
-- Especificação do papel de cada membro da equipe (Email e outras info relevante)
+- DescriÃ§Ã£o do produto
+- EspecificaÃ§Ã£o do papel de cada membro da equipe (Email e outras info relevante)
 
 2.3 Processo de Desenvolvimento do Projeto
-- Especificação e documentação explicita do processo de desenvolvimento utilizado
-- Selecionar as melhores práticas e atividades dos modelos de processo (visto em aula)
-  *Pode-se utilizar outros modelos não visto, desde que seja documentados.
+- EspecificaÃ§Ã£o e documentaÃ§Ã£o explicita do processo de desenvolvimento utilizado
+- Selecionar as melhores prÃ¡ticas e atividades dos modelos de processo (visto em aula)
+  *Pode-se utilizar outros modelos nÃ£o visto, desde que seja documentados.
 
 2.4 Rastreabilidade do Ciclo de Vida
-- Apartir do doc de requisitos disponível criar HU (Histórias do Usuário) com identificação, análise, priorização, e eventual evolução dos objetivos do time em relação so projeto
+- Apartir do doc de requisitos disponÃ­vel criar HU (HistÃ³rias do UsuÃ¡rio) com identificaÃ§Ã£o, anÃ¡lise, priorizaÃ§Ã£o, e eventual evoluÃ§Ã£o dos objetivos do time em relaÃ§Ã£o so projeto
 - HU deve ser cadastradas e gerenciadas como "issues" no issue tracker do GitHub, contendo seu ciclo de vida.
-- HU deve conter "máquina de estados" indicando seu estado(To Do -> Doing -> Testing -> Done).
+- HU deve conter "mÃ¡quina de estados" indicando seu estado(To Do -> Doing -> Testing -> Done).
 
-2.5 Post-mortem do projeto (Finalização)
-- Resumo do projeto (Funcionamento, falhas, lições aprendidas e etc).
- * Deve conter Período da interação (Início e fim), 
+2.5 Post-mortem do projeto (FinalizaÃ§Ã£o)
+- Resumo do projeto (Funcionamento, falhas, liÃ§Ãµes aprendidas e etc).
+ * Deve conter PerÃ­odo da interaÃ§Ã£o (InÃ­cio e fim), 
  * Planejamento das atividades (Discriminando as atividades, o que foi feito e por quem)
- * Planejamento das atividades (Discriminando as atividades, o que não foi feito e por quem, quais impedimentos)
- * Interações Futuras (atividades e pra quem) e Lições aprendidas (Finalização)
+ * Planejamento das atividades (Discriminando as atividades, o que nÃ£o foi feito e por quem, quais impedimentos)
+ * InteraÃ§Ãµes Futuras (atividades e pra quem) e LiÃ§Ãµes aprendidas (FinalizaÃ§Ã£o)
 
-2.6 Código da Aplicação
+2.6 CÃ³digo da AplicaÃ§Ã£o
 - Colocar no GitHub versionada 
 - Pode utilizar qualquer linguagem ou framework
-- Sugestão framework web ágeis (Ruby on Rails, Grails, Spring Boot, Django, entre outros)
+- SugestÃ£o framework web Ã¡geis (Ruby on Rails, Grails, Spring Boot, Django, entre outros)
 
 2.7 Testes Funcionais
 - Testes automatizados (TDD)
-- Selecionar HUs que receberão testes
+- Selecionar HUs que receberÃ£o testes
 
-2.8 Testes de Aceitação
-- Testes automatizados (BDD), sugestão Cucumber
-- Selecionar HUs que receberão testes
+2.8 Testes de AceitaÃ§Ã£o
+- Testes automatizados (BDD), sugestÃ£o Cucumber
+- Selecionar HUs que receberÃ£o testes
 
-2.9  Implantação
-- Versão funcional e final implantada nas nuvens (serviços) 
+2.9  ImplantaÃ§Ã£o
+- VersÃ£o funcional e final implantada nas nuvens (serviÃ§os) 
 
-3. Relatório Final do Projeto
+3. RelatÃ³rio Final do Projeto
 - Seguir guidelines como material de apoio
-- Deve possui Introdução, Gerência de Configuração e Ambiente, Caracteristicas da aplicação, visão de Análise e Projeto (Arquitetura), Visão de implantação, visão de uso, revisão do projeto e revisão individual).
+- Deve possui IntroduÃ§Ã£o, GerÃªncia de ConfiguraÃ§Ã£o e Ambiente, Caracteristicas da aplicaÃ§Ã£o, visÃ£o de AnÃ¡lise e Projeto (Arquitetura), VisÃ£o de implantaÃ§Ã£o, visÃ£o de uso, revisÃ£o do projeto e revisÃ£o individual).
 
-4. Considerações de propriedade intelectual do projeto
-- Caso o projeto tenha dimensões comerciais, verificar as políticas da UFPE.
+4. ConsideraÃ§Ãµes de propriedade intelectual do projeto
+- Caso o projeto tenha dimensÃµes comerciais, verificar as polÃ­ticas da UFPE.
 
-
+-
