@@ -8,7 +8,7 @@
 - Especificaçõs dos membros da Equipe
 
 Nome:  Rafaela Helena Santos	
-#Email: rhs@cin.ufpe.br
+Email: rhs@cin.ufpe.br
 
 Nome:  Rogério Mangabeira Vicente de Aquino	
 Email: rmva@cin.ufpe.br
