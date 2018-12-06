@@ -21,20 +21,20 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long codigoCliente;
 
-    public Long getId() {
-        return id;
+    public Long getCodigoCliente() {
+        return codigoCliente;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCodigoCliente(Long codigoCliente) {
+        this.codigoCliente = codigoCliente;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (codigoCliente != null ? codigoCliente.hashCode() : 0);
         return hash;
     }
 
@@ -45,7 +45,7 @@ public class Cliente implements Serializable {
             return false;
         }
         Cliente other = (Cliente) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if ((this.codigoCliente == null && other.codigoCliente != null) || (this.codigoCliente != null && !this.codigoCliente.equals(other.codigoCliente))) {
             return false;
         }
         return true;
@@ -53,7 +53,7 @@ public class Cliente implements Serializable {
 
     @Override
     public String toString() {
-        return "br.com.videolocaeng.model.Cliente[ id=" + id + " ]";
+        return "br.com.videolocaeng.model.Cliente[ id=" + codigoCliente + " ]";
     }
     
 }
