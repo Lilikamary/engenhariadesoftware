@@ -1,0 +1,5 @@
+tipos de metodologias adp, tbl, tbl
+Aprendizagem Baseada em Problema - ABP
+Team Based Learning (Aprendizagem Baseada em Times)
+PBL - Aprendizagem Baseada em Resolução de Problemas - Problem Based Learning 
+
