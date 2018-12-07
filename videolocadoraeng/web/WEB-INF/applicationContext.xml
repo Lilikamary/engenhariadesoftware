@@ -22,4 +22,5 @@
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
 
+    <bean id="clienteBean" class="br.com.videolocaeng.bean.ClienteBean"/>
 </beans>
