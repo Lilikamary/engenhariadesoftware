@@ -11,14 +11,12 @@ Conforme os requisitos da Vídeo Locadora Imperial foi possível a realização 
 
 Trata-se de um sistema de informação com a finalidade de apoiar atividades realizada numa Vídeo Locadora, como empréstimos e devolução de itens e reserva de filmes. Conforme os requisitos do cliente o sistema de Vídeo Locadora poderá realizar algumas funcionalidades como consultas, gerenciar clientes, registrar pagamentos, cadastrar fornecedores e entre outras.
 
-Projeto utilizou as seguintes tecnologias e framework: Java, Hibernate...
-
 
 - Especificaçõs dos membros da Equipe
 
 Nome:  Rafaela Helena Santos	
 Email: rhs@cin.ufpe.br
-Papel: Dev Team
+Papel: Scrum Master
 
 Nome:  Rogério Mangabeira Vicente de Aquino	
 Email: rmva@cin.ufpe.br
