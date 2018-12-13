@@ -2,7 +2,7 @@ Vídeo Locadora Imperial
 
 - Justificativa do projeto
 
-Numa organização atualmente é primordial o uso de um sistema de informação capaz de gerar valor, assim como automatizar processos e realizar atividades fundamentais para registros e gerência da organização. Sendo assim, o projeto de desenvolvimento de um software é imprescindível a utilização dos princípios da Engenharia de Software.
+Numa organização atualmente é fundamental o uso de um sistema de informação capaz de gerar valor, assim como automatizar processos e realizar atividades fundamentais para registros e gerência da organização. Sendo assim, o projeto de desenvolvimento de um software é imprescindível a utilização dos princípios da Engenharia de Software.
 
 Conforme os requisitos da Vídeo Locadora Imperial foi possível a realização de um projeto de software, afim de atender as necessidade do cliente e que possa está contribuindo para o seu processo de informatização e desenvolvimento.
 
@@ -28,7 +28,7 @@ Papel: Dev Team
 
 Nome:  Mônica Auricélia Oliveira Santana	
 Email: maos2@cin.ufpe.br
-Papel: Dev Team
+Papel: Product Owner
 
 Nome:  Lilian Maria Gonçalves	
 Email: lmg@cin.ufpe.br
