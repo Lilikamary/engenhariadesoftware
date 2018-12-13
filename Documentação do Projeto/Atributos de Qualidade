@@ -1,11 +1,21 @@
 1. Descreva os detalhes de cada um dos atributos:
 
-- 
+a) Portabilidade: A	consulta ao acervo  deve estar disponível pela	Internet, a partir dos principais navegadores disponíveis no  mercado.        
 
--
+b) Segurança de acesso: O sistema deve controlar o acesso às funcionalidades. Funcionalidades para controlar o acervo da locadora devem ser restritas a 
+administradores.Funcionalidades de atendimento a clientes devem estar restritas a atendentes. Funcionalidades de consulta ao acervo 
+devem estar	disponíveis na Internet. 
 
--
+c) Usabilidade: O sistema deve ser fácil de usar, devendo‐se evitar a digitação desnecessária de informações, de modo a dar agilidade ao
+processo.       	  
 
 2. Justifique porque os mesmos são importantes para sua aplicação.
 
+a) 
+
+
 3. Indique a prioridade dos mesmo.
+
+- Segurança de acesso: prioridade alta.
+- Usabilidade: prioridade alta
+- Portabilidade: prioridade média
