@@ -1,0 +1,24 @@
+Postmortem do projeto: Resumo do que funcionou e do que não funcionou durante a execução do projeto, e planos para melhorar o que não funcionou, lições aprendidas, etc.
+
+No primeiro Sprint no período 03/12 a 07/12 teve as seguintes metas:
+Leitura e compreensão do projeto, estudo sobre metodologias a serem utilizadas e divisão de tarefas e atribuição de responsáveis.
+Também foi planejadas as seguintes atividades e os seus responsáveis:
+Estudar sobre metodologias de gerenciamento e ferramentas para desenvolvimento de projetos. [Scrum Team];
+Criar Repositório compartilhado com Scrum Team. [Img];
+Documentar o checklist do projeto.[rhs].
+Criar Documento product backlog. [maos2];
+Criar Readme/inicial [ocsf];
+Criar Diagrama de Entidade Relacionamento e Diagrama lógico [maos2];
+Sincronização do Netbeans com o GIT HUB. [lmg];
+Fazer atualização do Hibernate e Glassfish junto ao Netbeans. [lmg];
+Criar documentação do projeto (Introdução). [lnff,rmva];
+Criar documentação do projeto (Gerência de configuração e ambiente). [lnff,rmva];
+Criar Tela inicial e Cadastro de Clientes (protótipo). [ocsf]
+Foi Especificado o período da próxima sprint: 10/12 a 14/12 com as seguintes metas:
+Lista de atividades previstas indicando o responsável
+Criar apresentação do andamento do projeto ao cliente [lnff,rmva];
+Atualizar documentação do projeto. [lnff,rmva];
+Prototipar telas do sistema. [ocsf];
+Fazer integração do Github com Heroku. [lmg];
+Fazer testes BDD das funcionalidades entregues [maos2]
+As lições aprendidas neste sprint teve varias fase a do planejamento e entendimento do projeto, as divisões das atividades, definições de papéis, cronograma para o projeto, dificuldade com as tecnologias para desenvolvimento do projeto, dificuldades para reuniões por causa distância e ferramenta que atendesse os requisitos e planejamento das sprint.
