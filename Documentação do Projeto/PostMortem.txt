@@ -1,24 +1,39 @@
-Postmortem do projeto: Resumo do que funcionou e do que n„o funcionou durante a execuÁ„o do projeto, e planos para melhorar o que n„o funcionou, liÁıes aprendidas, etc.
+Postmortem do projeto
 
-No primeiro Sprint no perÌodo 03/12 a 07/12 teve as seguintes metas:
-Leitura e compreens„o do projeto, estudo sobre metodologias a serem utilizadas e divis„o de tarefas e atribuiÁ„o de respons·veis.
-TambÈm foi planejadas as seguintes atividades e os seus respons·veis:
-Estudar sobre metodologias de gerenciamento e ferramentas para desenvolvimento de projetos. [Scrum Team];
-Criar RepositÛrio compartilhado com Scrum Team. [Img];
-Documentar o checklist do projeto.[rhs].
-Criar Documento product backlog. [maos2];
-Criar Readme/inicial [ocsf];
-Criar Diagrama de Entidade Relacionamento e Diagrama lÛgico [maos2];
-SincronizaÁ„o do Netbeans com o GIT HUB. [lmg];
-Fazer atualizaÁ„o do Hibernate e Glassfish junto ao Netbeans. [lmg];
-Criar documentaÁ„o do projeto (IntroduÁ„o). [lnff,rmva];
-Criar documentaÁ„o do projeto (GerÍncia de configuraÁ„o e ambiente). [lnff,rmva];
-Criar Tela inicial e Cadastro de Clientes (protÛtipo). [ocsf]
-Foi Especificado o perÌodo da prÛxima sprint: 10/12 a 14/12 com as seguintes metas:
-Lista de atividades previstas indicando o respons·vel
-Criar apresentaÁ„o do andamento do projeto ao cliente [lnff,rmva];
-Atualizar documentaÁ„o do projeto. [lnff,rmva];
-Prototipar telas do sistema. [ocsf];
-Fazer integraÁ„o do Github com Heroku. [lmg];
-Fazer testes BDD das funcionalidades entregues [maos2]
-As liÁıes aprendidas neste sprint teve varias fase a do planejamento e entendimento do projeto, as divisıes das atividades, definiÁıes de papÈis, cronograma para o projeto, dificuldade com as tecnologias para desenvolvimento do projeto, dificuldades para reuniıes por causa dist‚ncia e ferramenta que atendesse os requisitos e planejamento das sprint.
+Resumo do que funcionou e do que n√£o funcionou durante a execu√ß√£o do projeto, e planos para melhorar o que n√£o funcionou, li√ß√µes aprendidas, etc.
+
+:::::::: 1 SPRINT :::::::::03/12 a 07/12
+
+No primeiro Sprint no per√≠odo 03/12 a 07/12 teve as seguintes metas:
+- Leitura e compreens√£o do projeto;
+- Estudo sobre metodologias a serem utilizadas;
+- Divis√£o de tarefas e atribui√ß√£o de respons√°veis.
+
+Tamb√©m foi planejadas as seguintes atividades e os seus respons√°veis:
+- Estudar sobre metodologias de gerenciamento e ferramentas para desenvolvimento de projetos. [Scrum Team];
+- Criar Reposit√≥rio compartilhado com Scrum Team. [Img];
+- Documentar o checklist do projeto.[rhs].
+- Criar Documento product backlog. [maos2];
+- Criar Readme/inicial [ocsf];
+- Criar Diagrama de Entidade Relacionamento e Diagrama l√≥gico [maos2];
+- Sincroniza√ß√£o do Netbeans com o GIT HUB. [lmg];
+- Fazer atualiza√ß√£o do Hibernate e Glassfish junto ao Netbeans. [lmg];
+- Criar documenta√ß√£o do projeto (Introdu√ß√£o). [lnff,rmva];
+- Criar documenta√ß√£o do projeto (Ger√™ncia de configura√ß√£o e ambiente). [lnff,rmva];
+- Criar Tela inicial e Cadastro de Clientes (prot√≥tipo). [ocsf]
+
+
+As li√ß√µes aprendidas neste sprint teve varias fase a do planejamento e entendimento do projeto, as divis√µes das atividades, defini√ß√µes de pap√©is, cronograma para o projeto, dificuldade com as tecnologias para desenvolvimento do projeto, dificuldades para reuni√µes por causa dist√¢ncia e ferramenta que atendesse os requisitos e planejamento das sprint.
+
+
+:::::::: 2 SPRINT :::::::::10/12 a 14/12
+
+Foi Especificado o per√≠odo da pr√≥xima sprint: 10/12 a 14/12 com as seguintes metas:
+- Criar apresenta√ß√£o do andamento do projeto ao cliente [lnff,rmva];
+- Atualizar documenta√ß√£o do projeto. [lnff,rmva];
+- Prototipar telas do sistema. [ocsf];
+- Fazer integra√ß√£o do Github com Heroku. [lmg];
+- Fazer testes BDD das funcionalidades entregues [maos2]
+
+
+
