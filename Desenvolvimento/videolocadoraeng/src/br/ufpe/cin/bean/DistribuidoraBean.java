@@ -3,8 +3,13 @@ package br.ufpe.cin.bean;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
+import com.ocpsoft.pretty.faces.annotation.URLMapping;
+
 @Named
 @RequestScoped
+@URLMapping(id = "manterDistribuidora", pattern = "/cadastrar", 
+viewId = "/resources/pages/distribuidora/manterDistribuidora.xhtml")
+
 public class DistribuidoraBean {
 	private String input;
 	private String output;
