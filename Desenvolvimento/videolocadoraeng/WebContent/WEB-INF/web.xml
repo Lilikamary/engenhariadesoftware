@@ -13,4 +13,9 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
+	<data-source>
+		<name>java:global/DataSourceName</name>
+		<class-name>org.postgresql</class-name>
+		<url>jdbc:postgresql://localhost:5432/videolocadoraeng</url>
+	</data-source>
 </web-app>
