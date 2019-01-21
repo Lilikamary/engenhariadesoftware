@@ -71,5 +71,12 @@
 	    <artifactId>rewrite-config-prettyfaces</artifactId>
 	    <version>3.4.1.Final</version>
 	</dependency>
-  </dependencies>
+	<dependency>
+    	<groupId>jboss</groupId>
+	    <artifactId>jbosssx</artifactId>
+	    <version>3.2.3</version>
+	    <scope>provided</scope>
+</dependency>
+
+  </dependencies>  
 </project>
