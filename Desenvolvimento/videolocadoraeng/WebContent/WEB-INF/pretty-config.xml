@@ -1,11 +1,11 @@
 <pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.3.0" 
-               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-               xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.0
-                                   		http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.0.xsd">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.3.0 
+http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.3.0.xsd">
  
 	 <url-mapping id="login">
 		<pattern value="/login" />
-		<view-id value="/legacy/user/login.jsp" />
+		<view-id value="/videolocadoraeng/resources/pages/autenticacao/autenticacao.xhtml" />
 	</url-mapping>
 
 </pretty-config>

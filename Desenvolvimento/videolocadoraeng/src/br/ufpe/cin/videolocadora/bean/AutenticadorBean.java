@@ -10,8 +10,8 @@ import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import br.ufpe.cin.videolocadora.model.User;
-import br.ufpe.cin.videolocadora.service.UserService;
+import br.ufpe.cin.videolocadora.jpa.Usuario;
+import br.ufpe.cin.videolocadora.service.UsuarioService;
 
 import com.ocpsoft.pretty.faces.annotation.URLAction;
 import com.ocpsoft.pretty.faces.annotation.URLMapping;
@@ -36,7 +36,7 @@ public class AutenticadorBean {
 			private String senha;
 			
 			@Inject
-			private UserService userService;
+			private UsuarioService userService;
 	
 			private static final String URL = "home.xhtml";
 			
@@ -60,7 +60,7 @@ public class AutenticadorBean {
 					request.login(login, senha); //efetuar o login
 					
 					//obtenho dados do usuario associado ao login
-					User user = userService.obterUsuarioPorLogin(login); 
+					Usuario user = userService.obterUsuarioPorLogin(login); 
 					
 					//armazeno as informacoes do usuario na sessao
 					getSession().setAttribute(USUARIO_AUTENTICADO, user);
@@ -94,8 +94,8 @@ public class AutenticadorBean {
 
 			}
 		
-			public User getUsuarioAutenticado() {
-				return (User) getSession().getAttribute(USUARIO_AUTENTICADO);
+			public Usuario getUsuarioAutenticado() {
+				return (Usuario) getSession().getAttribute(USUARIO_AUTENTICADO);
 			}
 			
 			public boolean isAutenticado(){
