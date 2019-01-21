@@ -2,7 +2,7 @@ package br.ufpe.cin.videolocadora.service;
 
 import javax.ejb.Stateless;
 
-import br.com.tds.model.User;
+import br.ufpe.cin.videolocadora.model.User;
 
 @Stateless
 public class UserService {

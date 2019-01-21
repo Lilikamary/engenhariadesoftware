@@ -62,21 +62,26 @@
     	<version>8.0.15</version>
 	</dependency>
 	<dependency>
+   		<groupId>com.ocpsoft</groupId>
+   		<artifactId>prettyfaces-jsf2</artifactId>
+   		<version>3.3.0</version>
+	</dependency>
+	<dependency>
     	<groupId>org.ocpsoft.rewrite</groupId>
     	<artifactId>rewrite-servlet</artifactId>
     	<version>3.4.1.Final</version>
 	</dependency>
 	<dependency>
-	    <groupId>org.ocpsoft.rewrite</groupId>
-	    <artifactId>rewrite-config-prettyfaces</artifactId>
-	    <version>3.4.1.Final</version>
-	</dependency>
+    	<groupId>org.ocpsoft.rewrite</groupId>
+    	<artifactId>rewrite-config-prettyfaces</artifactId>
+    	<version>3.4.1.Final</version>
+	</dependency>	
 	<dependency>
     	<groupId>jboss</groupId>
 	    <artifactId>jbosssx</artifactId>
 	    <version>3.2.3</version>
 	    <scope>provided</scope>
-</dependency>
+	</dependency>
 
   </dependencies>  
 </project>

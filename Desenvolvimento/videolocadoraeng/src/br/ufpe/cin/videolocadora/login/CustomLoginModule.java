@@ -1,4 +1,4 @@
-package br.com.tds.login;
+package br.ufpe.cin.videolocadora.login;
 
 import java.security.acl.Group;
 
