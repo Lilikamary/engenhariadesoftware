@@ -3,12 +3,11 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui"> 
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tds="http://java.sun.com/jsf/composite/tds/composite"
+	template="/WEB-INF/template/principal.xhtml">
 
-<h:head>
-<title>Cadastro de Distribuidoras</title>
-</h:head> 
-<h:body> 
+
 <h:form>
 
 <h:inputText id="razaoSocial" labelValue="Razão Social" value="#{distribuidoraBean.distribuidora.razaoSocial}"></h:inputText>

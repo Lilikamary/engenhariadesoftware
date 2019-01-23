@@ -38,7 +38,6 @@ public class AutenticadorBean {
 			
 			private String senha;
 			
-			private Usuario usuario = new Usuario();
 	
 			private static final String URL = "home.xhtml";
 			
@@ -119,5 +118,22 @@ public class AutenticadorBean {
 				}
 				return usuarioBase;
 			}
+
+			public String getLogin() {
+				return login == null ? "" : login;
+			}
+
+			public void setLogin(String login) {
+				this.login = login;
+			}
+
+			public String getSenha() {
+				return senha == null ? "" : senha;
+			}
+
+			public void setSenha(String senha) {
+				this.senha = senha;
+			}
+			
 			
 }
