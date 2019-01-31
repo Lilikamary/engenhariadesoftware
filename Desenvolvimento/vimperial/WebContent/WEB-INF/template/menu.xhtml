@@ -4,25 +4,23 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
+
+<h:head>
 
 
+</h:head>
 <h:body>
-<ui:composition>
-<ui:define name="menu">
+<ui:composition template="WEB-INF/template/principal.xhtml">
 	<h:form>
 		<p:panelMenu style="width:300px">
-			<p:submenu label="Cadastros">
-				<p:menuitem value="Manter Endereço Distribuidora"
-					action="/resources/pages/distribuidoras/manterEndDistribuidora.xhtml" icon="ui-icon-disk" />
-				<p:menuitem value="Manter Distribuidora"
-					action="/resources/pages/distribuidoras/manterDistribuidora.xhtml" icon="ui-icon-disk" />
+			<p:submenu label="Principal">
 				<p:menuitem value="Manter Filmes"
-					action="/resources/pages/Filmes/manterfilme.xhtml" icon="ui-icon-disk" />				
+					action="/WEB-INF/resources/pages/filmes" icon="ui-icon-disk" />
 			</p:submenu>
 			<p:separator />
 		</p:panelMenu>
 	</h:form>
-	</ui:define>
 	</ui:composition>
 </h:body>
 </html>

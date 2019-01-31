@@ -9,8 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="enddistribuidora")
-public class EndDistribuidora  implements Serializable{
+@Table(name="endereco")
+public class Endereco  implements Serializable{
 	
 	/**
 	 * 
@@ -19,7 +19,7 @@ public class EndDistribuidora  implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long codEndDistribuidora;
+	private Long codEndereco;
 	
 	private String logradouro;
 	private String numero;
@@ -28,11 +28,11 @@ public class EndDistribuidora  implements Serializable{
 	private String cep;
 
 	
-	public Long getCodEndDistribuidora() {
-		return codEndDistribuidora;
+	public Long getCodEndereco() {
+		return codEndereco;
 	}
-	public void setCodEndDistribuidora(Long codEndDistribuidora) {
-		this.codEndDistribuidora = codEndDistribuidora;
+	public void setCodEnderecoa(Long codEndereco) {
+		this.codEndereco = codEndereco;
 	}
 	public String getLogradouro() {
 		return logradouro;
