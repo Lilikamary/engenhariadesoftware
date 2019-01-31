@@ -2,8 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" >
 
-	<ui:composition template="WEB-INF/template/menu.xhtml">
-	</ui:composition>
+  <h:head>
+    <title>Video Locadora Imperial</title>
+  </h:head>
+  <h:body>
+  <ui:composition template="/WEB-INF/template/menu.xhtml">
+    <h:form id="form">
+     <table width="100%">
+        <tr>
+          <td colspan="2" align="center">
+            <ui:insert name="cabecalho">
+              <h1>Video Locadora Imperial</h1>
+            </ui:insert>
+          </td>
+        </tr>
+        <tr>
+          <td width="200px" align="left">
+            <ui:insert name="menu">
+              <h1>Menu</h1>
+              </ui:insert>
+          </td>
+          <td>
+            <ui:insert name="conteudo">
+            </ui:insert>
+          </td>
+        </tr>
+      </table>
+     
+    </h:form>
+    </ui:composition>
+    </h:body>
+
 </html>
