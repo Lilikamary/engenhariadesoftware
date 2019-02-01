@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="vimperial" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="vimperial">
 		<class>br.ufpe.cin.vimperial.entidades.Filme</class>
 		<class>br.ufpe.cin.vimperial.entidades.Distribuidora</class>
 		<class>br.ufpe.cin.vimperial.entidades.Telefone</class>
@@ -8,14 +8,13 @@
 		<class>br.ufpe.cin.vimperial.entidades.Cliente</class>
 		<class>br.ufpe.cin.vimperial.entidades.Dependente</class>
 		<properties>
+			<property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+			<property name="javax.persistence.schema-generation.create-source" value="metadata"/>
+			<property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/videolocadoraeng"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
 			<property name="javax.persistence.jdbc.password" value="diario26"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-			<property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
-			<property name="javax.persistence.schema-generation.create-source" value="metadata"/>
-			<property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
 		</properties>
 	</persistence-unit>
 </persistence>
