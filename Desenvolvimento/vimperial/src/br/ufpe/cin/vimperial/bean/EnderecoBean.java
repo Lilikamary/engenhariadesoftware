@@ -25,6 +25,28 @@ public class EnderecoBean {
 		manager.getTransaction().commit();
 		manager.close();
 	}
+	
+	public void excluir(Endereco endereco) {
+        try {
+        	EntityManager manager = JPAUtil.getEntityManager();
+            manager.getTransaction().begin();
+            manager.remove(endereco);
+            manager.getTransaction().commit();
+            manager.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+	
+	public Endereco localizarEndereco(Long codEndereco) {
+		
+		EntityManager manager = JPAUtil.getEntityManager();
+		Endereco enderecoLocalizado = manager.find(Endereco.class, codEndereco);
+		manager.close();
+		return enderecoLocalizado;
+		
+	}
 
 	public Endereco getEndereco() {
 		return endereco;
