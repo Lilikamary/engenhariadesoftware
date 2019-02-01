@@ -20,6 +20,16 @@
     <artifactId>primefaces</artifactId>
     <version>6.2</version>
 </dependency>
+  	<dependency>
+  		<groupId>org.dom4j</groupId>
+  		<artifactId>dom4j</artifactId>
+  		<version>2.1.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-api</artifactId>
+  		<version>1.7.3</version>
+  	</dependency>
   </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
