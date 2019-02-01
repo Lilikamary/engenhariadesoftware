@@ -15,14 +15,20 @@
 
  	<p:growl id="mensagens" sticky="true" />  
  
-    <p:layoutUnit position="north" size="50" header="Imperial" resizable="true" closable="true" collapsible="true">
-        <h:outputText value="Vídeo Locadora Imperial" />
-    </p:layoutUnit>
-
-    <p:layoutUnit position="west" size="100" header="Menu">
-        <ui:insert name="menu" />
-    </p:layoutUnit>
-
+    <p:layoutUnit position="north" size="200" header="Video Locadora Imperial" resizable="true" closable="true" collapsible="true">         
+ 	<p:menubar>
+        <p:submenu label="Cadastro">
+           <p:menuitem value="Cliente" url="#" />
+           <p:menuitem value="Dependente" url="#" />
+            <p:menuitem value="Distribuidora" url="#" />
+            <p:menuitem value="Endereço" url="#" />
+            <p:menuitem value="Filme" url="#" />
+            <p:menuitem value="Telefone" url="#" />
+            <p:separator />
+            <p:menuitem value="Sair" url="#" />
+        </p:submenu>
+ 	</p:menubar>
+	</p:layoutUnit>
  
     <p:layoutUnit position="center">
        <ui:insert name="conteudo" />
