@@ -7,30 +7,30 @@ import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.entidades.Cliente;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
 @ManagedBean
 @RequestScoped
 
-public class FilmeBean {
+public class ClienteBean {
 	
-	private Filme filme = new Filme();
+	private Cliente cliente = new Cliente();
 	
-	public void salvar(Filme filme) {
+	public void salvar(Cliente cliente) {
 		
 		EntityManager manager = JPAUtil.getEntityManager();
 		manager.getTransaction().begin();
-		manager.persist(filme);
+		manager.persist(cliente);
 		manager.getTransaction().commit();
 		manager.close();
 	}
 
-	public void excluir(Filme filme) {
+	public void excluir(Cliente cliente) {
         try {
         	EntityManager manager = JPAUtil.getEntityManager();
             manager.getTransaction().begin();
-            manager.remove(filme);
+            manager.remove(cliente);
             manager.getTransaction().commit();
             manager.close();
         } catch (Exception ex) {
@@ -39,32 +39,32 @@ public class FilmeBean {
 
     }
 	
-	public Filme localizarFilme(Long codFilme) {
+	public Cliente localizarCliente(Long codCliente) {
 		
 		EntityManager manager = JPAUtil.getEntityManager();
-		Filme filmeLocalizado = manager.find(Filme.class, codFilme);
+		Cliente clienteLocalizado = manager.find(Cliente.class, codCliente);
 		manager.close();
-		return filmeLocalizado;
+		return clienteLocalizado;
 		
 	}
 	
-	public Filme getFilme() {
-		return filme;
+	public Cliente getFilme() {
+		return cliente;
 	}
 
-	public void setFilme(Filme filme) {
-		this.filme = filme;
+	public void setFilme(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Filme> listarTodos(){
+	public List<Cliente> listarTodos(){
 		
 		EntityManager manager = JPAUtil.getEntityManager();
 		manager.getTransaction().begin();		
-		Query query = manager.createQuery("FROM filme");
-        List<Filme> filmes = query.getResultList();
+		Query query = manager.createQuery("FROM cliente");
+        List<Cliente> clientes = query.getResultList();
         manager.close();
-        return filmes;
+        return clientes;
 		
 		
 	}
