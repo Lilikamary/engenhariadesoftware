@@ -1,0 +1,105 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:tds="http://java.sun.com/jsf/composite/tds/composite"
+    template="/WEB-INF/template/principal.xhtml" >
+    
+	<ui:define name="conteudo">
+		<p:growl id="messages" />
+
+		<h:form id="meuFormulario">
+
+			<p:panel id="basic" header="Cadastro de Filmes"
+				style="margin-bottom:20px">
+
+				<tds:formInputText id="filmesTituloOriginal" labelValue="Titulo Original"
+					value="#{filmeBean.filme.tituloOriginal}" validationRequired="true"
+					size="100" />
+
+				<tds:formInputText id="filmesTituloPortugues" labelValue="Título em Português"
+					value="#{filmeBean.filme.tituloPortugues}"
+					validationRequired="true" size="100"/>				
+		
+				<tds:formInputText id="filmesDirecao"
+					labelValue="Direção"
+					value="#{filmeBean.filme.direcao}"
+					validationRequired="true" size="100">
+				</tds:formInputText>
+
+				<tds:formInputText id="filmesGenero"
+					labelValue="Gênero"
+					value="#{filmeBean.filme.genero}"
+					validationRequired="true" size="100">
+				</tds:formInputText>
+
+				<tds:formInputText id="filmesPais"
+					labelValue="País de Produção"
+					value="#{filmeBean.filme.paisProducao}"
+					validationRequired="true" size="100" >
+				</tds:formInputText>
+					
+
+				<tds:formInputText id="filmesAno" labelValue="Ano de Lançamento"
+					value="#{filmeBean.filme.ano}" validationRequired="true" />
+
+				<tds:formInputText id="filmesDuracao" labelValue="Duração"
+					value="#{filmeBean.filme.duracao}"
+					validationRequired="true" />
+
+				<tds:formInputText id="filmesSinopse" labelValue="Sinopse"
+					value="#{filmeBean.filme.sinopse}"
+					validationRequired="true" size="100"/>
+
+ 				<p:commandButton action="#{filmeBean.salvar(filme)}"
+					icon=" ui-icon-disk" update="@form :registrosForm" />
+
+			</p:panel>
+		
+
+		</h:form>
+
+		<h:form id="registrosForm">
+
+			<p:panel id="basic" header="Filmes" style="margin-bottom:20px">
+
+				<p:dataTable var="filme" value="#{filmeBean.filmes}"
+					emptyMessage="Nenhum Registro">
+					<p:column headerText="Id">
+						<h:outputText value="#{filme.codFilme}" />
+					</p:column>
+
+					<p:column headerText="Título Original">
+						<h:outputText value="#{filme.tituloOriginal}" />
+					</p:column>
+
+					<p:column headerText="Título Português">
+						<h:outputText value="#{filme.tituloPortugues}" />
+					</p:column>
+
+	
+					<p:column headerText="Ações">
+						<p:commandButton
+							action="#{filmeBean.excluir(filme)}"
+							icon=" ui-icon-trash" title="Excluir"
+							update="@form :meuFormulario">
+
+							<p:confirm header="Confirmation" message="Confirmar Exclusão"
+								icon="ui-icon-alert" />
+
+						</p:commandButton>
+					</p:column>
+				</p:dataTable>
+
+				<p:confirmDialog global="true">
+					<p:commandButton value="Sim" type="button"
+						styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+					<p:commandButton value="Não" type="button"
+						styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				</p:confirmDialog>
+			</p:panel>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

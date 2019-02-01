@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" > 
+
+<h:head>
+		<h:outputStylesheet library="css" name="main.css" />
+		<h:outputStylesheet library="css" name="normalize.css" />
+</h:head>
+ 
+<h:body> 
+<p:layout fullPage="true">
+
+ 	<p:growl id="mensagens" sticky="true" />  
+ 
+    <p:layoutUnit position="north" size="200" header="Imperial" resizable="true" closable="true" collapsible="true">
+        <h:outputText value="Vídeo Locadora Imperial" />
+        <p:menubar>
+		    <p:submenu label="Cadastro">
+	        <p:menuitem value="Filme" url="/resources/pages/filmes/manterFilme.xhtml" />
+	        <p:menuitem value="Distribuidora" url="/resources/pages/filmes/manterDistribuidora.xhtml" />
+	        <p:menuitem value="Cliente" url="/resources/pages/filmes/manterCliente.xhtml" />
+	        <p:menuitem value="Endereço" url="/resources/pages/filmes/manterEndereco.xhtml" />
+        	<p:menuitem value="Dependentes" url="/resources/pages/filmes/manterDependente.xhtml" />
+        	<p:menuitem value="Telefones" url="/resources/pages/filmes/manterTelefone.xhtml" />
+     </p:submenu>
+    <p:submenu label="Locação">
+        <p:menuitem value="Home" url="http://www.google.com.br" />
+    </p:submenu>
+    <p:menuitem value="Sair" url="/index.xhtml" icon="ui-icon ui-icon-power" />
+</p:menubar>
+    </p:layoutUnit>
+
+ 
+    <p:layoutUnit position="center">
+       <ui:insert name="conteudo" />
+    </p:layoutUnit>
+ 
+</p:layout>
+
+</h:body> 
+</html>

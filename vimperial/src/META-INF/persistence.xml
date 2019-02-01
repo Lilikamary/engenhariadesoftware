@@ -1,0 +1,26 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+	<persistence-unit name="vimperial">
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.ufpe.cin.vimperial.entidades.Filme</class>
+		<class>br.ufpe.cin.vimperial.entidades.Distribuidora</class>
+		<class>br.ufpe.cin.vimperial.entidades.Endereco</class>
+		<class>br.ufpe.cin.vimperial.entidades.Telefone</class>
+		<class>br.ufpe.cin.vimperial.entidades.Cliente</class>
+		<class>br.ufpe.cin.vimperial.entidades.Dependente</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.connection.username" value="postgres"/>
+			<property name="hibernate.connection.password" value="diario26"/>
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
+			<property name="hibernate.hbm2ddl.auto" value = "create-drop"/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/videolocadoraeng"/>
+			<property name="hibernate.default_schema" value="public"/>
+		</properties>
+	</persistence-unit>
+</persistence>
