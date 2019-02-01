@@ -1,9 +1,10 @@
 package br.ufpe.cin.vimperial.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -11,12 +12,26 @@ import br.ufpe.cin.vimperial.entidades.Filme;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
 @ManagedBean
-@RequestScoped
+@ViewScoped
 
-public class FilmeBean {
+public class FilmeBean implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private Filme filme = new Filme();
-	
+
+
+	public Filme getFilme() {
+		return filme;
+	}
+
+	public void setFilme(Filme filme) {
+		this.filme = filme;
+	}
+
 	public void salvar(Filme filme) {
 		
 		EntityManager manager = JPAUtil.getEntityManager();
@@ -48,14 +63,6 @@ public class FilmeBean {
 		
 	}
 
-	public Filme getFilme() {
-		return filme;
-	}
-
-	public void setFilme(Filme filme) {
-		this.filme = filme;
-	}
-
 	@SuppressWarnings("unchecked")
 	public List<Filme> listarTodos(){
 		
@@ -65,8 +72,7 @@ public class FilmeBean {
         List<Filme> filmes = query.getResultList();
         manager.close();
         return filmes;
-		
-		
 	}
+
 	
 }
