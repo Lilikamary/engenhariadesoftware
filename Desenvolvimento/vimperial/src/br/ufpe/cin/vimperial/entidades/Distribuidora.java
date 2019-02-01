@@ -28,7 +28,7 @@ public class Distribuidora implements Serializable{
 	private String telefone;
 	
 	@ManyToOne
-	private Endereco endereco;
+	private EndDistribuidora endereco;
 
 	public Long getCodDistribuidora() {
 		return codDistribuidora;
@@ -62,11 +62,11 @@ public class Distribuidora implements Serializable{
 		this.telefone = telefone;
 	}
 
-	public Endereco getEndereco() {
+	public EndDistribuidora getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(EndDistribuidora endereco) {
 		this.endereco = endereco;
 	}
 
