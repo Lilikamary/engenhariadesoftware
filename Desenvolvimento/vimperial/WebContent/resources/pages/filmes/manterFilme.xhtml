@@ -14,52 +14,47 @@
 			<p:panel id="basic" header="Cadastro de Filmes"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="eventosId" labelValue="Titulo Original"
+				<tds:formInputText id="filmesTituloOriginal" labelValue="Titulo Original"
 					value="#{filmeBean.filme.tituloOriginal}" validationRequired="true"
 					size="100" />
 
 
-				<tds:formInputText id="inicioEventoId" labelValue="Início do Evento"
-					value="#{manterEventoBean.evento.inicioEvento}"
-					validationRequired="true">
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-
-
+				<tds:formInputText id="filmesTituloPortugues" labelValue="Titulo Português"
+					value="#{filmeBean.filme.tituloPortugues}"
+					validationRequired="true" size="100">
 				</tds:formInputText>
 
-				<tds:formInputText id="terminoEventoId"
-					labelValue="Término do Evento"
-					value="#{manterEventoBean.evento.terminoEvento}"
-					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
+				<tds:formInputText id="filmesDirecao"
+					labelValue="Direção"
+					value="#{filmeBean.filme.direcao}"
+					validationRequired="true" size="100">				
 				</tds:formInputText>
 
-				<tds:formInputText id="inicioSubmissaoId"
-					labelValue="Início da Submissão"
-					value="#{manterEventoBean.evento.inicioSubmissao}"
-					validationRequired="true" >
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
+				<tds:formInputText id="filmesGenero"
+					labelValue="Gênero"
+					value="#{filmeBean.filme.genero}"
+					validationRequired="true" size="100">
 				</tds:formInputText>
 
-				<tds:formInputText id="terminoSubmissaoId"
-					labelValue="Término da Submissão"
-					value="#{manterEventoBean.evento.terminoSubmissao}"
-					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input" />
+				<tds:formInputText id="filmesPais"
+					labelValue="País de Produção"
+					value="#{filmeBean.filme.paisProducao}"
+					validationRequired="true" size="100">
 				</tds:formInputText>
 					
 
-				<tds:formInputText id="siteId" labelValue="Site do Evento"
-					value="#{manterEventoBean.evento.site}" validationRequired="true" />
+				<tds:formInputText id="filmesAno" labelValue="Ano de Produção"
+					value="#{filmeBean.filme.ano}" validationRequired="true" />
 
-				<tds:formInputText id="emailContatoId" labelValue="Email de Contato"
-					value="#{manterEventoBean.evento.emailContato}"
+				<tds:formInputText id="filmesDuracao" labelValue="Duração"
+					value="#{filmeBean.filme.duracao}"
 					validationRequired="true" />
+					
+				<tds:formInputText id="filmesSinopse" labelValue="Sinopse"
+					value="#{filmeBean.filme.sinopse}"
+					validationRequired="true" size="100"/>
 
-
-				<p:commandButton action="#{manterEventoBean.cadastrarEvento()}"
+				<p:commandButton action="#{filmeBean.salvar(filme)}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>

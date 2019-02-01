@@ -27,12 +27,12 @@ public class Filme implements Serializable{
 	private String direcao;
 	private String genero;
 	private String paisProducao;
-	private Integer ano;
+	private String ano;
 	private String duracao;
 	private String sinopse;
 	
-	@ManyToOne
-	private Distribuidora distribuidora;
+//	@ManyToOne
+//	private Distribuidora distribuidora;
 	
 
 	public Long getCodFilme() {
@@ -44,13 +44,13 @@ public class Filme implements Serializable{
 	}
 
 	
-	public Distribuidora getDistribuidora() {
-		return distribuidora;
-	}
+//	public Distribuidora getDistribuidora() {
+//		return distribuidora;
+//	}
 
-	public void setDistribuidora(Distribuidora distribuidora) {
-		this.distribuidora = distribuidora;
-	}
+//	public void setDistribuidora(Distribuidora distribuidora) {
+//		this.distribuidora = distribuidora;
+//	}
 
 	
 	public String getTituloOriginal() {
@@ -93,11 +93,11 @@ public class Filme implements Serializable{
 		this.paisProducao = paisProducao;
 	}
 
-	public Integer getAno() {
+	public String getAno() {
 		return ano;
 	}
 
-	public void setAno(Integer ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 
