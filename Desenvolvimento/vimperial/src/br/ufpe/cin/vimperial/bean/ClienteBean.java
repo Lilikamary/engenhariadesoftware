@@ -48,11 +48,11 @@ public class ClienteBean {
 		
 	}
 	
-	public Cliente getFilme() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setFilme(Cliente cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
