@@ -63,45 +63,26 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Eventos" style="margin-bottom:20px">
+			<p:panel id="basic" header="Filmes" style="margin-bottom:20px">
 
-				<p:dataTable var="evento" value="#{manterEventoBean.eventos}"
+				<p:dataTable var="filmes" value="#{filmeBean.listarTodos()}"
 					emptyMessage="Nenhum Registro">
-					<p:column headerText="Id">
-						<h:outputText value="#{evento.eventoId}" />
+					<p:column headerText="Código">
+						<h:outputText value="#{filmeBean.filme.codFilme}" />
 					</p:column>
 
-					<p:column headerText="Evento">
-						<h:outputText value="#{evento.evento}" />
+					<p:column headerText="Título Original">
+						<h:outputText value="#{filmeBean.filme.tituloOriginal}" />
 					</p:column>
 
-					<p:column headerText="Início Evento">
-						<h:outputText value="#{evento.inicioEvento}" />
+					<p:column headerText="Título Português">
+						<h:outputText value="#{filmeBean.filme.tituloPortugues}" />
 					</p:column>
 
-					<p:column headerText="Término Evento">
-						<h:outputText value="#{evento.terminoEvento}" />
-					</p:column>
-
-					<p:column headerText="Início Submissão">
-						<h:outputText value="#{evento.inicioSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Término Submissão">
-						<h:outputText value="#{evento.terminoSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Site">
-						<h:outputText value="#{evento.site}" />
-					</p:column>
-
-					<p:column headerText="E-mail de Contato">
-						<h:outputText value="#{evento.emailContato}" />
-					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{manterEventoBean.excluirEvento(evento)}"
+							action="#{filmeBean.excluir(filme)}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

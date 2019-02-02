@@ -12,55 +12,25 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Filmes"
+			<p:panel id="basic" header="Cadastro de Distribuidora"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="eventosId" labelValue="Evento"
-					value="#{manterEventoBean.evento.evento}" validationRequired="true"
-					size="10" />
+				<tds:formInputText id="distribuidoraRazaoSocial" labelValue="Razão Social"
+					value="#{distribuidoraBean.distribuidora.razaoSocial}" validationRequired="true"
+					size="100" />
 
-
-				<tds:formInputText id="inicioEventoId" labelValue="Início do Evento"
-					value="#{manterEventoBean.evento.inicioEvento}"
-					validationRequired="true">
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-
-
+				<tds:formInputText id="distribuidoraResponsavel" labelValue="Responsável"
+					value="#{distribuidoraBean.distribuidora.responsavel}"
+					validationRequired="true" size="100">
 				</tds:formInputText>
 
-				<tds:formInputText id="terminoEventoId"
-					labelValue="Término do Evento"
-					value="#{manterEventoBean.evento.terminoEvento}"
+				<tds:formInputText id="distribuidoraTelefone"
+					labelValue="Telefone Distribuidora"
+					value="#{distribuidoraBean.distribuidora.telefone}"
 					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
 				</tds:formInputText>
 
-				<tds:formInputText id="inicioSubmissaoId"
-					labelValue="Início da Submissão"
-					value="#{manterEventoBean.evento.inicioSubmissao}"
-					validationRequired="true" >
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-				</tds:formInputText>
-
-				<tds:formInputText id="terminoSubmissaoId"
-					labelValue="Término da Submissão"
-					value="#{manterEventoBean.evento.terminoSubmissao}"
-					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input" />
-				</tds:formInputText>
-					
-
-				<tds:formInputText id="siteId" labelValue="Site do Evento"
-					value="#{manterEventoBean.evento.site}" validationRequired="true" />
-
-				<tds:formInputText id="emailContatoId" labelValue="Email de Contato"
-					value="#{manterEventoBean.evento.emailContato}"
-					validationRequired="true" />
-
-
-				<p:commandButton action="#{manterEventoBean.cadastrarEvento()}"
+				<p:commandButton action="#{distribuidoraBean.salvar(distribuidora)}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>
@@ -69,45 +39,29 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Eventos" style="margin-bottom:20px">
+			<p:panel id="basic" header="Distribuidoras" style="margin-bottom:20px">
 
-				<p:dataTable var="evento" value="#{manterEventoBean.eventos}"
+				<p:dataTable var="evento" value="#{distribuidoraBean.listarTodos()}"
 					emptyMessage="Nenhum Registro">
-					<p:column headerText="Id">
-						<h:outputText value="#{evento.eventoId}" />
+					<p:column headerText="Código">
+						<h:outputText value="#{distribuidoraBean.distribuidora.codDistribuidora}" />
 					</p:column>
 
-					<p:column headerText="Evento">
-						<h:outputText value="#{evento.evento}" />
+					<p:column headerText="Razão Social">
+						<h:outputText value="#{distribuidoraBean.distribuidora.razaoSocial}" />
 					</p:column>
 
-					<p:column headerText="Início Evento">
-						<h:outputText value="#{evento.inicioEvento}" />
+					<p:column headerText="Responsável">
+						<h:outputText value="#{distribuidoraBean.distribuidora.responsavel}" />
 					</p:column>
 
-					<p:column headerText="Término Evento">
-						<h:outputText value="#{evento.terminoEvento}" />
-					</p:column>
-
-					<p:column headerText="Início Submissão">
-						<h:outputText value="#{evento.inicioSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Término Submissão">
-						<h:outputText value="#{evento.terminoSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Site">
-						<h:outputText value="#{evento.site}" />
-					</p:column>
-
-					<p:column headerText="E-mail de Contato">
-						<h:outputText value="#{evento.emailContato}" />
+					<p:column headerText="Telefone">
+						<h:outputText value="#{distribuidoraBean.distribuidora.telefone}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{manterEventoBean.excluirEvento(evento)}"
+							action="#{distribuidoraBean.excluir(distribuidora)}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
