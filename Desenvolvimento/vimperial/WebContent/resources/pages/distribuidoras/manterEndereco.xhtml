@@ -12,55 +12,30 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Filmes"
+			<p:panel id="basic" header="Cadastro de Endereço"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="eventosId" labelValue="Evento"
-					value="#{manterEventoBean.evento.evento}" validationRequired="true"
+				<tds:formInputText id="enderecoLogradouro" labelValue="Logradouro"
+					value="#{enderecoBean.endereco.logradouro}" validationRequired="true"
+					size="100" />
+
+				<tds:formInputText id="enderecoNumero" labelValue="Número"
+					value="#{enderecoBean.endereco.numero}" validationRequired="true"
 					size="10" />
 
+				<tds:formInputText id="enderecoBairro" labelValue="Bairro"
+					value="#{enderecoBean.endereco.bairro}" validationRequired="true"
+					size="100" />
 
-				<tds:formInputText id="inicioEventoId" labelValue="Início do Evento"
-					value="#{manterEventoBean.evento.inicioEvento}"
-					validationRequired="true">
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
+				<tds:formInputText id="enderecoCidade" labelValue="Cidade"
+					value="#{enderecoBean.endereco.cidade}" validationRequired="true"
+					size="100" />
 
+				<tds:formInputText id="enderecoCep" labelValue="Cep"
+					value="#{enderecoBean.endereco.cep}" validationRequired="true"
+					size="10" />
 
-				</tds:formInputText>
-
-				<tds:formInputText id="terminoEventoId"
-					labelValue="Término do Evento"
-					value="#{manterEventoBean.evento.terminoEvento}"
-					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-				</tds:formInputText>
-
-				<tds:formInputText id="inicioSubmissaoId"
-					labelValue="Início da Submissão"
-					value="#{manterEventoBean.evento.inicioSubmissao}"
-					validationRequired="true" >
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-				</tds:formInputText>
-
-				<tds:formInputText id="terminoSubmissaoId"
-					labelValue="Término da Submissão"
-					value="#{manterEventoBean.evento.terminoSubmissao}"
-					validationRequired="true" >
-					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input" />
-				</tds:formInputText>
-					
-
-				<tds:formInputText id="siteId" labelValue="Site do Evento"
-					value="#{manterEventoBean.evento.site}" validationRequired="true" />
-
-				<tds:formInputText id="emailContatoId" labelValue="Email de Contato"
-					value="#{manterEventoBean.evento.emailContato}"
-					validationRequired="true" />
-
-
-				<p:commandButton action="#{manterEventoBean.cadastrarEvento()}"
+				<p:commandButton action="#{enderecoBean.salvar(endereco)}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>
@@ -69,45 +44,26 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Eventos" style="margin-bottom:20px">
+			<p:panel id="basic" header="Endereços" style="margin-bottom:20px">
 
-				<p:dataTable var="evento" value="#{manterEventoBean.eventos}"
+				<p:dataTable var="endereco" value="#{enderecoBean.listarTodos()}"
 					emptyMessage="Nenhum Registro">
-					<p:column headerText="Id">
-						<h:outputText value="#{evento.eventoId}" />
+					<p:column headerText="Código">
+						<h:outputText value="#{enderecoBean.endereco.codEndereco}" />
 					</p:column>
 
-					<p:column headerText="Evento">
-						<h:outputText value="#{evento.evento}" />
+					<p:column headerText="Logradouro">
+						<h:outputText value="#{enderecoBean.endereco.logradouro}" />
 					</p:column>
 
-					<p:column headerText="Início Evento">
-						<h:outputText value="#{evento.inicioEvento}" />
+					<p:column headerText="Cidade">
+						<h:outputText value="#{enderecoBean.endereco.cidade}" />
 					</p:column>
 
-					<p:column headerText="Término Evento">
-						<h:outputText value="#{evento.terminoEvento}" />
-					</p:column>
-
-					<p:column headerText="Início Submissão">
-						<h:outputText value="#{evento.inicioSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Término Submissão">
-						<h:outputText value="#{evento.terminoSubmissao}" />
-					</p:column>
-
-					<p:column headerText="Site">
-						<h:outputText value="#{evento.site}" />
-					</p:column>
-
-					<p:column headerText="E-mail de Contato">
-						<h:outputText value="#{evento.emailContato}" />
-					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{manterEventoBean.excluirEvento(evento)}"
+							action="#{enderecoBean.excluir(endereco)}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
