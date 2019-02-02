@@ -54,7 +54,7 @@
 					value="#{filmeBean.filme.sinopse}"
 					validationRequired="true" size="100"/>
 
-				<p:commandButton action="#{filmeBean.salvar(filme)}"
+				<p:commandButton action="#{filmeBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>
@@ -65,24 +65,24 @@
 
 			<p:panel id="basic" header="Filmes" style="margin-bottom:20px">
 
-				<p:dataTable var="filmes" value="#{filmeBean.listarTodos()}"
+				<p:dataTable var="filmes" value="#{filmeBean.filmes}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{filmeBean.filme.codFilme}" />
+						<h:outputText value="#{filme.codFilme}" />
 					</p:column>
 
 					<p:column headerText="Título Original">
-						<h:outputText value="#{filmeBean.filme.tituloOriginal}" />
+						<h:outputText value="#{filme.tituloOriginal}" />
 					</p:column>
 
 					<p:column headerText="Título Português">
-						<h:outputText value="#{filmeBean.filme.tituloPortugues}" />
+						<h:outputText value="#{filme.tituloPortugues}" />
 					</p:column>
 
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{filmeBean.excluir(filme)}"
+							action="#{filmeBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

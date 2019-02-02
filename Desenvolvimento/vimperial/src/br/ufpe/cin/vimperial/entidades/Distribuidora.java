@@ -7,20 +7,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="distribuidora")
+@SequenceGenerator(name = "seq_distribuidora",
+sequenceName = "distribuidora_seq", initialValue = 1, 
+allocationSize = 1)
 
-public class Distribuidora implements Serializable{
+public class Distribuidora {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_distribuidora")
 	private Long codDistribuidora;
 	
 	private String razaoSocial;

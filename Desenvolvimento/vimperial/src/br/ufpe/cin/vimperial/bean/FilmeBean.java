@@ -1,28 +1,35 @@
 package br.ufpe.cin.vimperial.bean;
 
-import java.io.Serializable;
+
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+import javax.faces.context.FacesContext;
 
 import br.ufpe.cin.vimperial.entidades.Filme;
-import br.ufpe.cin.vimperial.util.JPAUtil;
+import br.ufpe.cin.vimperial.service.FilmeService;
+
 
 @ManagedBean
 @ViewScoped
-
-public class FilmeBean implements Serializable{
+public class FilmeBean {
 	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
-	private Filme filme = new Filme();
+	private Filme filme;
+	private FilmeService service;
+	private List<Filme> filmes;
 
+	@PostConstruct
+	public void init(){
+		service = new FilmeService();
+		filme = new Filme();
+		filmes = service.listarTodos();
+	}
 
 	public Filme getFilme() {
 		return filme;
@@ -32,47 +39,51 @@ public class FilmeBean implements Serializable{
 		this.filme = filme;
 	}
 
-	public void salvar(Filme filme) {
-		
-		EntityManager manager = JPAUtil.getEntityManager();
-		manager.getTransaction().begin();
-		manager.persist(filme);
-		manager.getTransaction().commit();
-		manager.close();
+	public List<Filme> getFilmes() {
+		return filmes;
+	}
+
+	public void setFilmes(List<Filme> filmes) {
+		this.filmes = filmes;
 	}
 	
-	public void excluir(Filme filme) {
-        try {
-        	EntityManager manager = JPAUtil.getEntityManager();
-            manager.getTransaction().begin();
-            manager.remove(filme);
-            manager.getTransaction().commit();
-            manager.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+	public void salvar(){
+		this.service.inserir(filme);
+		this.init();
+		FacesContext context = 
+				FacesContext.getCurrentInstance();
+        
+        context.addMessage(null,
+        		new FacesMessage("Sucesso",  
+        				"Cadastro com sucesso!" ) );
 
-    }
+	}
 	
-	public Filme localizarFilme(Long codFilme) {
-		
-		EntityManager manager = JPAUtil.getEntityManager();
-		Filme filmeLocalizado = manager.find(Filme.class, codFilme);
-		manager.close();
-		return filmeLocalizado;
-		
-	}
+	
+	public void atualizar(){
+		this.service.alterar(filme);;
+		this.init();
+		FacesContext context = 
+				FacesContext.getCurrentInstance();
+        
+        context.addMessage(null,
+        		new FacesMessage("Sucesso",  
+        				"Alterado com sucesso!" ) );
 
-	@SuppressWarnings("unchecked")
-	public List<Filme> listarTodos(){
-		
-		EntityManager manager = JPAUtil.getEntityManager();
-		manager.getTransaction().begin();		
-		Query query = manager.createQuery("FROM filme");
-        List<Filme> filmes = query.getResultList();
-        manager.close();
-        return filmes;
 	}
+	
+	
+	public void excluir(){
+		this.service.excluir(filme);
+		this.init();
+		FacesContext context = 
+				FacesContext.getCurrentInstance();
+        
+        context.addMessage(null,
+        		new FacesMessage("Sucesso",  
+        				"Excluído com sucesso!" ) );
 
+	}	
+	
 	
 }
