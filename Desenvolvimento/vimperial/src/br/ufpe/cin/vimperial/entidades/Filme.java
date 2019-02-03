@@ -1,26 +1,10 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="filme")
-@SequenceGenerator(name = "seq_filme",
-sequenceName = "filme_seq", initialValue = 1, 
-allocationSize = 1)
 public class Filme {
 
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_filme")
 	private Long codFilme;
-	
 	private String tituloOriginal;
 	private String tituloPortugues;
 	private String direcao;
@@ -30,10 +14,8 @@ public class Filme {
 	private String duracao;
 	private String sinopse;
 	
-//	@ManyToOne
-//	private Distribuidora distribuidora;
-	
 
+	
 	public Long getCodFilme() {
 		return codFilme;
 	}
@@ -41,16 +23,6 @@ public class Filme {
 	public void setCodFilme(Long codFilme) {
 		this.codFilme = codFilme;
 	}
-
-	
-//	public Distribuidora getDistribuidora() {
-//		return distribuidora;
-//	}
-
-//	public void setDistribuidora(Distribuidora distribuidora) {
-//		this.distribuidora = distribuidora;
-//	}
-
 	
 	public String getTituloOriginal() {
 		return tituloOriginal;

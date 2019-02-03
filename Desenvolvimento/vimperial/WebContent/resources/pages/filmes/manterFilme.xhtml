@@ -16,8 +16,8 @@
 
 				<tds:formInputText id="filmesTituloOriginal" labelValue="Titulo Original"
 					value="#{filmeBean.filme.tituloOriginal}" validationRequired="true"
-					size="100" />
-
+					size="100" >
+				</tds:formInputText>
 
 				<tds:formInputText id="filmesTituloPortugues" labelValue="Titulo Português"
 					value="#{filmeBean.filme.tituloPortugues}"
@@ -56,7 +56,7 @@
 
 				<p:commandButton action="#{filmeBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
-
+   
 			</p:panel>
 
 		</h:form>

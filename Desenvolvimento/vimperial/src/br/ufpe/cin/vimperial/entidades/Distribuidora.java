@@ -1,33 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
-import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="distribuidora")
-@SequenceGenerator(name = "seq_distribuidora",
-sequenceName = "distribuidora_seq", initialValue = 1, 
-allocationSize = 1)
 
 public class Distribuidora {
 
 	
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_distribuidora")
 	private Long codDistribuidora;
 	
 	private String razaoSocial;
 	private String responsavel;
 	private String telefone;
 	
-	@ManyToOne
 	private Endereco endereco;
 
 	public Long getCodDistribuidora() {

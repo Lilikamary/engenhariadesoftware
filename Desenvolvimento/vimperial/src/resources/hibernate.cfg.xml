@@ -10,11 +10,11 @@
   <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
   <property name="hibernate.hbm2ddl.auto">create-drop</property>
   <property name="hibernate.show_sql">true</property>
+  <mapping class="br.ufpe.cin.vimperial.entidades.Filme"/>
   <mapping class="br.ufpe.cin.vimperial.entidades.Cliente"/>
   <mapping class="br.ufpe.cin.vimperial.entidades.Dependente"/>
   <mapping class="br.ufpe.cin.vimperial.entidades.Distribuidora"/>
   <mapping class="br.ufpe.cin.vimperial.entidades.Endereco"/>
-  <mapping class="br.ufpe.cin.vimperial.entidades.Filme"/>
   <mapping class="br.ufpe.cin.vimperial.entidades.Telefone"/>
  </session-factory>
 </hibernate-configuration>

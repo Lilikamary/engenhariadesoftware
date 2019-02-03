@@ -3,37 +3,29 @@
   <groupId>vimperial</groupId>
   <artifactId>vimperial</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+    <packaging>war</packaging>
   <dependencies>
   <dependency>
-    <groupId>javax.persistence</groupId>
-    <artifactId>javax.persistence-api</artifactId>
-    <version>2.2</version>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>9.3-1101-jdbc4</version>
 </dependency>
-<dependency>
+		<dependency>
     <groupId>org.glassfish</groupId>
     <artifactId>javax.faces</artifactId>
-    <version>2.2.0</version>
+    <version>2.1.29-11</version>
+</dependency>
+<dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-web-api</artifactId>
+    <version>7.0</version>
+    <scope>provided</scope>
+    <type>jar</type>
 </dependency>
 <dependency>
     <groupId>org.primefaces</groupId>
     <artifactId>primefaces</artifactId>
-    <version>6.2</version>
-</dependency>
-  	<dependency>
-  		<groupId>org.dom4j</groupId>
-  		<artifactId>dom4j</artifactId>
-  		<version>2.1.1</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.slf4j</groupId>
-  		<artifactId>slf4j-api</artifactId>
-  		<version>1.7.3</version>
-  	</dependency>
-  	<dependency>
-    <groupId>postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>9.1-901.jdbc4</version>
+    <version>5.1</version>
 </dependency>
   </dependencies>
   <build>
