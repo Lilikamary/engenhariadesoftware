@@ -1,23 +1,9 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="endereco")
-@SequenceGenerator(name = "seq_endereco",
-sequenceName = "endereco_seq", initialValue = 1, 
-allocationSize = 1)
 public class Endereco {
 	
-
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_endereco")
 	private Long codEndereco;
 	
 	private String logradouro;

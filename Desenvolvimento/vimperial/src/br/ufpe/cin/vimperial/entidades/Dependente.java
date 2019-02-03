@@ -1,31 +1,14 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="dependente")
-@SequenceGenerator(name = "seq_dependente",
-sequenceName = "dependente_seq", initialValue = 1, 
-allocationSize = 1)
 public class Dependente {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_dependente")
 	private Long codDependente;
 	
 	private String nome;
 	private String tipoDependente;
 	private String email;
 	
-	@ManyToOne
-	private Cliente cliente;
 
 	public Long getCodDependente() {
 		return codDependente;
@@ -59,14 +42,5 @@ public class Dependente {
 		this.email = email;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	
 	
 }

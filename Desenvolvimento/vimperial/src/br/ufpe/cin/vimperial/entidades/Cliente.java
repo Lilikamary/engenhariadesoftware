@@ -1,23 +1,9 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="cliente")
-@SequenceGenerator(name = "seq_cliente",
-sequenceName = "cliente_seq", initialValue = 1, 
-allocationSize = 1)
 public class Cliente  {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "seq_cliente")
 	private Long codCliente;
 	private String nome;
 	private String cpf;
@@ -25,12 +11,6 @@ public class Cliente  {
 	private char sexo;
 	private String email;
 	private String localTrabalho;
-
-	@ManyToOne
-	private Endereco endereco;
-	
-	@ManyToOne
-	private Telefone telefone;
 
 	public Long getCodCliente() {
 		return codCliente;
@@ -88,19 +68,4 @@ public class Cliente  {
 		this.localTrabalho = localTrabalho;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
-	public Telefone getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(Telefone telefone) {
-		this.telefone = telefone;
-	}
 }
