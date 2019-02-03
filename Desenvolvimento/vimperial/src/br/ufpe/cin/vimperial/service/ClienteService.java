@@ -2,9 +2,8 @@ package br.ufpe.cin.vimperial.service;
 
 import java.util.List;
 
-import br.ufpe.cin.vimperial.DAO.FilmeDAO;
+import br.ufpe.cin.vimperial.DAO.ClienteDAO;
 import br.ufpe.cin.vimperial.entidades.Cliente;
-import br.ufpe.cin.vimperial.entidades.Filme;
 
 public class ClienteService {
 	

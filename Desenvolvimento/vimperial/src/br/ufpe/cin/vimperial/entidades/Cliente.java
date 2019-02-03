@@ -8,7 +8,7 @@ public class Cliente  {
 	private String nome;
 	private String cpf;
 	private String dataNascimento;
-	private char sexo;
+	private String sexo;
 	private String email;
 	private String localTrabalho;
 
@@ -44,11 +44,11 @@ public class Cliente  {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
 
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 

@@ -1,19 +1,19 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-public class Telefone {
+public class TelefoneCliente {
 
-	private Long codTelefone;
+	private Long codTelefoneCliente;
 	
 	private String telefone;
 	
 	
 	public Long getCodTelefone() {
-		return codTelefone;
+		return codTelefoneCliente;
 	}
 
-	public void setCodTelefone(Long codTelefone) {
-		this.codTelefone = codTelefone;
+	public void setCodTelefone(Long codTelefoneCliente) {
+		this.codTelefoneCliente = codTelefoneCliente;
 	}
 
 	public String getTelefone() {

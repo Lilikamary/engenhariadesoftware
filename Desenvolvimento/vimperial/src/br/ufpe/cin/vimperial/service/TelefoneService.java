@@ -2,26 +2,26 @@ package br.ufpe.cin.vimperial.service;
 
 import java.util.List;
 
-import br.ufpe.cin.vimperial.DAO.FilmeDAO;
 import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.entidades.TelefoneCliente;
 
 public class TelefoneService {
 	
-	private FilmeDAO dao;
+	private TelefoneDAO dao;
 	
 	public TelefoneService(){
-		dao = new FilmeDAO();
+		dao = new TelefoneDAO();
 	}
 	
-	public void incluir(Filme filme){
-		 dao.inserir(filme);
+	public void incluir(TelefoneCliente telefone){
+		 dao.inserir(telefone);
 	}
 	
-	public void excluir(Filme filme){
-		dao.excluir(filme);
+	public void excluir(TelefoneCliente telefone){
+		dao.excluir(telefone);
 	}
 	
-	public List<Filme> listarTodos(){
+	public List<TelefoneCliente> listarTodos(){
 		return dao.listarTodos();
 	}
 
