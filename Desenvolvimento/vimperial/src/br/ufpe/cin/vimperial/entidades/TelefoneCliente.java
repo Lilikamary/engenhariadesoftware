@@ -8,11 +8,11 @@ public class TelefoneCliente {
 	private String telefone;
 	
 	
-	public Long getCodTelefone() {
+	public Long getCodTelefoneCliente() {
 		return codTelefoneCliente;
 	}
 
-	public void setCodTelefone(Long codTelefoneCliente) {
+	public void setCodTelefoneCliente(Long codTelefoneCliente) {
 		this.codTelefoneCliente = codTelefoneCliente;
 	}
 

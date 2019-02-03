@@ -2,8 +2,8 @@ package br.ufpe.cin.vimperial.service;
 
 import java.util.List;
 
+import br.ufpe.cin.vimperial.DAO.DistribuidoraDAO;
 import br.ufpe.cin.vimperial.entidades.Distribuidora;
-import br.ufpe.cin.vimperial.entidades.Filme;
 
 public class DistribuidoraService {
 	
