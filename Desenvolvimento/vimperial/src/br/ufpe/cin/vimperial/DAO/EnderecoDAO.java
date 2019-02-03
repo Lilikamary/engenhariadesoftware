@@ -31,7 +31,7 @@ public class EnderecoDAO {
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
-					endereco.setCodEnderecoa(rs.getLong(1)); // primeira coluna
+					endereco.setCodEndereco(rs.getLong(1)); // primeira coluna
 				}
 			} catch (SQLException ex) {
 				ex.printStackTrace();
@@ -64,7 +64,7 @@ public class EnderecoDAO {
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
 				Endereco endereco = new Endereco();
-				endereco.setCodEnderecoa(rs.getLong("codendereco"));
+				endereco.setCodEndereco(rs.getLong("codendereco"));
 				endereco.setLogradouro(rs.getString("logradouro"));
 				endereco.setNumero(rs.getString("numero"));
 				endereco.setBairro(rs.getString("bairro"));

@@ -30,7 +30,7 @@
 					validationRequired="true" >
 				</tds:formInputText>
 
-				<p:commandButton action="#{distribuidoraBean.salvar(distribuidora)}"
+				<p:commandButton action="#{distribuidoraBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>
@@ -41,27 +41,27 @@
 
 			<p:panel id="basic" header="Distribuidoras" style="margin-bottom:20px">
 
-				<p:dataTable var="evento" value="#{distribuidoraBean.listarTodos()}"
+				<p:dataTable var="distribuidora" value="#{distribuidoraBean.distribuidoras}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{distribuidoraBean.distribuidora.codDistribuidora}" />
+						<h:outputText value="#{distribuidora.codDistribuidora}" />
 					</p:column>
 
 					<p:column headerText="Razão Social">
-						<h:outputText value="#{distribuidoraBean.distribuidora.razaoSocial}" />
+						<h:outputText value="#{distribuidora.razaoSocial}" />
 					</p:column>
 
 					<p:column headerText="Responsável">
-						<h:outputText value="#{distribuidoraBean.distribuidora.responsavel}" />
+						<h:outputText value="#{distribuidora.responsavel}" />
 					</p:column>
 
 					<p:column headerText="Telefone">
-						<h:outputText value="#{distribuidoraBean.distribuidora.telefone}" />
+						<h:outputText value="#{distribuidora.telefone}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{distribuidoraBean.excluir(distribuidora)}"
+							action="#{distribuidoraBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

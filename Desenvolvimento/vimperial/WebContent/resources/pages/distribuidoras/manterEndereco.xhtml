@@ -35,7 +35,7 @@
 					value="#{enderecoBean.endereco.cep}" validationRequired="true"
 					size="10" />
 
-				<p:commandButton action="#{enderecoBean.salvar(endereco)}"
+				<p:commandButton action="#{enderecoBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 
 			</p:panel>
@@ -46,24 +46,24 @@
 
 			<p:panel id="basic" header="Endereços" style="margin-bottom:20px">
 
-				<p:dataTable var="endereco" value="#{enderecoBean.listarTodos()}"
+				<p:dataTable var="endereco" value="#{enderecoBean.enderecos}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{enderecoBean.endereco.codEndereco}" />
+						<h:outputText value="#{endereco.codEndereco}" />
 					</p:column>
 
 					<p:column headerText="Logradouro">
-						<h:outputText value="#{enderecoBean.endereco.logradouro}" />
+						<h:outputText value="#{endereco.logradouro}" />
 					</p:column>
-
+				
 					<p:column headerText="Cidade">
-						<h:outputText value="#{enderecoBean.endereco.cidade}" />
+						<h:outputText value="#{endereco.cidade}" />
 					</p:column>
 
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{enderecoBean.excluir(endereco)}"
+							action="#{enderecoBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
