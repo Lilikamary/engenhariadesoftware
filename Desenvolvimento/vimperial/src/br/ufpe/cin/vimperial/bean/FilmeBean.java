@@ -7,14 +7,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-
+import javax.faces.bean.ViewScoped;
 
 import br.ufpe.cin.vimperial.entidades.Filme;
 import br.ufpe.cin.vimperial.service.FilmeService;
 
 
 @ManagedBean(name="filmeBean")
-@RequestScoped
+@ViewScoped
 public class FilmeBean implements Serializable{
 	
 

@@ -7,13 +7,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 import br.ufpe.cin.vimperial.entidades.Distribuidora;
 import br.ufpe.cin.vimperial.service.DistribuidoraService;
 
 
 @ManagedBean(name="distribuidoraBean")
-@RequestScoped
+@ViewScoped
 public class DistribuidoraBean implements Serializable{
 	
 

@@ -7,13 +7,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 
 import br.ufpe.cin.vimperial.entidades.TelefoneCliente;
 import br.ufpe.cin.vimperial.service.TelefoneClienteService;
 
 
 @ManagedBean(name="telefoneClienteBean")
-@RequestScoped
+@ViewScoped
 public class TelefoneClienteBean implements Serializable{
 	
 

@@ -25,8 +25,8 @@ public class EnderecoDAO {
 				pstm.setString(1, endereco.getLogradouro());
 				pstm.setString(2, endereco.getNumero());
 				pstm.setString(3, endereco.getBairro());
-				pstm.setString(2, endereco.getCidade());
-				pstm.setString(3, endereco.getCep());
+				pstm.setString(4, endereco.getCidade());
+				pstm.setString(5, endereco.getCep());
 
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
