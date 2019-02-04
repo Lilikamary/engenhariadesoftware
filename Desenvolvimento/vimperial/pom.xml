@@ -5,10 +5,10 @@
   <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
   <dependencies>
-  <dependency>
+<dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>9.3-1101-jdbc4</version>
+    <version>42.2.5</version>
 </dependency>
 		<dependency>
     <groupId>org.glassfish</groupId>
