@@ -11,50 +11,16 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Filmes"
+			<p:panel id="basic" header="Cadastro de Telefones"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="filmesTituloOriginal" labelValue="Titulo Original"
-					value="#{filmeBean.filme.tituloOriginal}" validationRequired="true"
-					size="100" >
+				<tds:formInputText id="telefoneClientesTelefone" labelValue="Telefone"
+					value="#{telefoneClienteBean.telefoneCliente.telefone}" validationRequired="true"
+					size="20" >
 				</tds:formInputText>
 
-				<tds:formInputText id="filmesTituloPortugues" labelValue="Titulo Português"
-					value="#{filmeBean.filme.tituloPortugues}"
-					validationRequired="true" size="100">
-				</tds:formInputText>
 
-				<tds:formInputText id="filmesDirecao"
-					labelValue="Direção"
-					value="#{filmeBean.filme.direcao}"
-					validationRequired="true" size="100">				
-				</tds:formInputText>
-
-				<tds:formInputText id="filmesGenero"
-					labelValue="Gênero"
-					value="#{filmeBean.filme.genero}"
-					validationRequired="true" size="100">
-				</tds:formInputText>
-
-				<tds:formInputText id="filmesPais"
-					labelValue="País de Produção"
-					value="#{filmeBean.filme.paisProducao}"
-					validationRequired="true" size="100">
-				</tds:formInputText>
-					
-
-				<tds:formInputText id="filmesAno" labelValue="Ano de Produção"
-					value="#{filmeBean.filme.ano}" validationRequired="true" />
-
-				<tds:formInputText id="filmesDuracao" labelValue="Duração"
-					value="#{filmeBean.filme.duracao}"
-					validationRequired="true" />
-					
-				<tds:formInputText id="filmesSinopse" labelValue="Sinopse"
-					value="#{filmeBean.filme.sinopse}"
-					validationRequired="true" size="100"/>
-
-				<p:commandButton action="#{filmeBean.salvar()}"
+				<p:commandButton action="#{telefoneClienteBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -63,26 +29,21 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Filmes" style="margin-bottom:20px">
+			<p:panel id="basic" header="Telefones" style="margin-bottom:20px">
 
-				<p:dataTable var="filmes" value="#{filmeBean.filmes}"
+				<p:dataTable var="telefoneCliente" value="#{telefoneClienteBean.telefoneClientes}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{filme.codFilme}" />
+						<h:outputText value="#{telefoneCliente.codTelefoneCliente}" />
 					</p:column>
 
-					<p:column headerText="Título Original">
-						<h:outputText value="#{filme.tituloOriginal}" />
+					<p:column headerText="Telefone">
+						<h:outputText value="#{telefoneCliente.telefone}" />
 					</p:column>
-
-					<p:column headerText="Título Português">
-						<h:outputText value="#{filme.tituloPortugues}" />
-					</p:column>
-
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{filmeBean.excluir()}"
+							action="#{telefoneClienteBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

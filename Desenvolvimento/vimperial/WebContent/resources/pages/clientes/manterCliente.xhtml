@@ -11,50 +11,43 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Filmes"
+			<p:panel id="basic" header="Cadastro de Cliente"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="filmesTituloOriginal" labelValue="Titulo Original"
-					value="#{filmeBean.filme.tituloOriginal}" validationRequired="true"
+				<tds:formInputText id="clientesNome" labelValue="Nome"
+					value="#{clienteBean.cliente.nome}" validationRequired="true"
 					size="100" >
 				</tds:formInputText>
 
-				<tds:formInputText id="filmesTituloPortugues" labelValue="Titulo Português"
-					value="#{filmeBean.filme.tituloPortugues}"
-					validationRequired="true" size="100">
+				<tds:formInputText id="clientesCpf" labelValue="CPF"
+					value="#{clienteBean.cliente.cpf}"
+					validationRequired="true" size="14">
 				</tds:formInputText>
 
-				<tds:formInputText id="filmesDirecao"
-					labelValue="Direção"
-					value="#{filmeBean.filme.direcao}"
+				<tds:formInputText id="clientesDataNascimento"
+					labelValue="Data Nascimento"
+					value="#{clienteBean.cliente.dataNascimento}"
 					validationRequired="true" size="100">				
 				</tds:formInputText>
 
-				<tds:formInputText id="filmesGenero"
-					labelValue="Gênero"
-					value="#{filmeBean.filme.genero}"
-					validationRequired="true" size="100">
+				<tds:formInputText id="clientesSexo"
+					labelValue="Sexo"
+					value="#{clienteBean.cliente.sexo}"
+					validationRequired="true" size="2">
 				</tds:formInputText>
 
-				<tds:formInputText id="filmesPais"
-					labelValue="País de Produção"
-					value="#{filmeBean.filme.paisProducao}"
+				<tds:formInputText id="clientesEmail"
+					labelValue="E-mail"
+					value="#{clienteBean.cliente.email}"
 					validationRequired="true" size="100">
 				</tds:formInputText>
 					
 
-				<tds:formInputText id="filmesAno" labelValue="Ano de Produção"
-					value="#{filmeBean.filme.ano}" validationRequired="true" />
+				<tds:formInputText id="clientesLocalTrabalho" labelValue="Local de Trabalho"
+					value="#{clienteBean.cliente.localTrabalho}" validationRequired="true"  size="100"/>
 
-				<tds:formInputText id="filmesDuracao" labelValue="Duração"
-					value="#{filmeBean.filme.duracao}"
-					validationRequired="true" />
-					
-				<tds:formInputText id="filmesSinopse" labelValue="Sinopse"
-					value="#{filmeBean.filme.sinopse}"
-					validationRequired="true" size="100"/>
 
-				<p:commandButton action="#{filmeBean.salvar()}"
+				<p:commandButton action="#{clienteBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -63,26 +56,25 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Filmes" style="margin-bottom:20px">
+			<p:panel id="basic" header="Clientes" style="margin-bottom:20px">
 
-				<p:dataTable var="filmes" value="#{filmeBean.filmes}"
+				<p:dataTable var="cliente" value="#{clienteBean.clientes}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{filme.codFilme}" />
+						<h:outputText value="#{cliente.codCliente}" />
 					</p:column>
 
-					<p:column headerText="Título Original">
-						<h:outputText value="#{filme.tituloOriginal}" />
+					<p:column headerText="Nome Cliente">
+						<h:outputText value="#{cliente.nome}" />
 					</p:column>
 
-					<p:column headerText="Título Português">
-						<h:outputText value="#{filme.tituloPortugues}" />
+					<p:column headerText="Data Nascimento">
+						<h:outputText value="#{cliente.dataNascimento}" />
 					</p:column>
-
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{filmeBean.excluir()}"
+							action="#{clienteBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
