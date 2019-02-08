@@ -30,6 +30,29 @@
 					validationRequired="true" >
 				</tds:formInputText>
 
+			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+				 <p:outputLabel for="endereco" value="Endereço:" />
+				 <p:selectOneMenu id="endereco" filter="true" value="#{distribuidoraBean.distribuidora.endereco}" style="width:125px">					 
+					 <f:selectItem itemLabel="Selecionar Endereço" itemValue="" />
+           		     <f:selectItems 
+           		     			value="#{distribuidoraBean.enderecos}" 
+           		     			var="endereco" 
+           		     			itemValue="#{endereco}" 
+           		     			itemLabel="#{endereco.logradouro}, #{endereco.numero} - #{endereco.cidade}" />
+           		 </p:selectOneMenu>    
+
+				 <p:outputLabel for="telefone" value="Telefone:" />
+				 <p:selectOneMenu id="telefone" filter="true" value="#{distribuidoraBean.distribuidora.telefone}" style="width:125px">					 
+					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
+           		     <f:selectItems 
+           		     			value="#{distribuidoraBean.telefones}" 
+           		     			var="telefone" 
+           		     			itemValue="#{telefone}" 
+           		     			itemLabel="#{telefone.telefone}" />
+           		 </p:selectOneMenu>    
+
+			</h:panelGrid>
+
 				<p:commandButton action="#{distribuidoraBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
 

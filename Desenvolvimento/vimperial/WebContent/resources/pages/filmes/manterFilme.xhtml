@@ -53,6 +53,18 @@
 				<tds:formInputText id="filmesSinopse" labelValue="Sinopse"
 					value="#{filmeBean.filme.sinopse}"
 					validationRequired="true" size="100"/>
+					
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					 <p:outputLabel for="distribuidora" value="Distribuidora:" />
+					 <p:selectOneMenu id="distribuidora" filter="true" value="#{filmeBean.filme.distribuidora}" style="width:125px">					 
+						 <f:selectItem itemLabel="Selecionar Distribuidora" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{filmeBean.distribuidoras}" 
+           		     			var="distribuidora" 
+           		     			itemValue="#{distribuidora}" 
+           		     			itemLabel="#{distribuidora.razaoSocial}" />
+           		 	</p:selectOneMenu>
+           		 </h:panelGrid>	    					
 
 				<p:commandButton action="#{filmeBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />

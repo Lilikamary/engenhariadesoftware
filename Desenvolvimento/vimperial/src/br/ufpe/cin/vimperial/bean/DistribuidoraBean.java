@@ -6,21 +6,30 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
 import br.ufpe.cin.vimperial.entidades.Distribuidora;
+import br.ufpe.cin.vimperial.entidades.Endereco;
+import br.ufpe.cin.vimperial.entidades.Telefone;
 import br.ufpe.cin.vimperial.service.DistribuidoraService;
+import br.ufpe.cin.vimperial.service.EnderecoService;
+import br.ufpe.cin.vimperial.service.TelefoneService;
 
 
 @ManagedBean(name="distribuidoraBean")
-@ViewScoped
+@SessionScoped
 public class DistribuidoraBean implements Serializable{
 	
 
 	private Distribuidora distribuidora;
 	private DistribuidoraService service;
 	private List<Distribuidora> distribuidoras;
+	
+	private List<Telefone> telefones;
+	private TelefoneService telefoneService;
+	
+	private List<Endereco> enderecos;
+	private EnderecoService enderecoService;
 
 	@PostConstruct
 	public void init(){
@@ -28,6 +37,12 @@ public class DistribuidoraBean implements Serializable{
 		distribuidora = new Distribuidora();
 		service = new DistribuidoraService();
 		distribuidoras = service.listarTodos();
+		
+		telefoneService = new TelefoneService();
+		enderecoService = new EnderecoService();
+		
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
 	}
 
 
@@ -63,5 +78,31 @@ public class DistribuidoraBean implements Serializable{
 	public void setDistribuidoras(List<Distribuidora> distribuidoras) {
 		this.distribuidoras = distribuidoras;
 	}
+
+
+
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
+
+
+
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
+	}
+
+
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+	
+	
 	
 }

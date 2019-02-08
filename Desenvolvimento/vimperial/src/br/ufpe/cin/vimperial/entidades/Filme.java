@@ -13,6 +13,8 @@ public class Filme {
 	private String duracao;
 	private String sinopse;
 	
+	private Distribuidora distribuidora;
+	
 
 	
 	public Long getCodFilme() {
@@ -86,5 +88,15 @@ public class Filme {
 	public void setSinopse(String sinopse) {
 		this.sinopse = sinopse;
 	}
+
+	public Distribuidora getDistribuidora() {
+		return distribuidora;
+	}
+
+	public void setDistribuidora(Distribuidora distribuidora) {
+		this.distribuidora = distribuidora;
+	}
+	
+	
 	
 }

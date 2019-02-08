@@ -9,7 +9,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 
+import br.ufpe.cin.vimperial.entidades.Cliente;
+import br.ufpe.cin.vimperial.entidades.Distribuidora;
 import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.service.ClienteService;
+import br.ufpe.cin.vimperial.service.DistribuidoraService;
 import br.ufpe.cin.vimperial.service.FilmeService;
 
 
@@ -21,6 +25,9 @@ public class FilmeBean implements Serializable{
 	private Filme filme;
 	private FilmeService service;
 	private List<Filme> filmes;
+	
+	private List<Distribuidora> distribuidoras;
+	private DistribuidoraService distribuidoraService;
 
 	@PostConstruct
 	public void init(){
@@ -28,6 +35,8 @@ public class FilmeBean implements Serializable{
 		filme = new Filme();
 		service = new FilmeService();
 		filmes = service.listarTodos();
+		distribuidoraService = new DistribuidoraService();
+		distribuidoras = distribuidoraService.listarTodos();
 	}
 
 
@@ -63,5 +72,19 @@ public class FilmeBean implements Serializable{
 	public void setFilmes(List<Filme> filmes) {
 		this.filmes = filmes;
 	}
+
+
+
+	public List<Distribuidora> getDistribuidoras() {
+		return distribuidoras;
+	}
+
+
+
+	public void setDistribuidoras(List<Distribuidora> distribuidoras) {
+		this.distribuidoras = distribuidoras;
+	}
+	
+	
 	
 }
