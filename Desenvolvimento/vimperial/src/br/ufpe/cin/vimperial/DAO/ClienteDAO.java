@@ -16,7 +16,7 @@ import br.ufpe.cin.vimperial.util.JPAUtil;
 public class ClienteDAO {
 	
 	public void inserir(Cliente cliente) {
-		
+		    System.out.println(cliente.getEndereco().getCodEndereco());
 			StringBuffer sql = new StringBuffer();
 			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho, telefone, endereco) ");
 			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ?, ? ) ");

@@ -33,29 +33,28 @@ public class ClienteBean implements Serializable{
 	
 	private List<Endereco> enderecos;
 	private EnderecoService enderecoService;
-
+	
 	@PostConstruct
 	public void init(){
 		
 		cliente = new Cliente();
 		service = new ClienteService();
+		clientes = service.listarTodos();
 		telefoneService = new TelefoneService();
 		enderecoService = new EnderecoService();
-		clientes = service.listarTodos();
 		telefones = telefoneService.listarTodos();
 		enderecos = enderecoService.listarTodos();
+		
+
 	}
 
 
 	
 	public String salvar(){
+		System.out.println(cliente.getEndereco().getCodEndereco());
 		service.incluir(cliente);
 		clientes = service.listarTodos();
 		cliente = new Cliente();
-		telefoneService = new TelefoneService();
-		enderecoService = new EnderecoService();		
-		telefones = telefoneService.listarTodos();
-		enderecos = enderecoService.listarTodos();
 		return "ok";
 
 	}
@@ -65,10 +64,6 @@ public class ClienteBean implements Serializable{
 		this.service.excluir(cliente);
 		clientes = service.listarTodos();
 		cliente = new Cliente();
-		telefoneService = new TelefoneService();
-		enderecoService = new EnderecoService();		
-		telefones = telefoneService.listarTodos();
-		enderecos = enderecoService.listarTodos();
 		return "ok";
 	}
 	
@@ -89,19 +84,15 @@ public class ClienteBean implements Serializable{
 	}
 
 
+
 	public List<Telefone> getTelefones() {
 		return telefones;
 	}
 
 
+
 	public void setTelefones(List<Telefone> telefones) {
 		this.telefones = telefones;
-	}
-
-
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
 	}
 
 
@@ -112,5 +103,9 @@ public class ClienteBean implements Serializable{
 
 
 
-	
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+
 }
