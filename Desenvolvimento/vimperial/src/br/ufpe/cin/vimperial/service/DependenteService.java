@@ -7,6 +7,7 @@ import br.ufpe.cin.vimperial.entidades.Dependente;
 
 public class DependenteService {
 	
+	
 	private DependenteDAO dao;
 	
 	public DependenteService(){

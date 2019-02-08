@@ -1,8 +1,6 @@
 package br.ufpe.cin.vimperial.entidades;
 
-
-
-public class Cliente  {
+public class Cliente {
 
 	private Long codCliente;
 	private String nome;

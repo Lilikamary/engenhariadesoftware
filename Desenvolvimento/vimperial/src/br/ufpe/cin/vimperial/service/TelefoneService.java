@@ -7,6 +7,7 @@ import br.ufpe.cin.vimperial.entidades.Telefone;
 
 public class TelefoneService {
 	
+	
 	private TelefoneDAO dao;
 	
 	public TelefoneService(){

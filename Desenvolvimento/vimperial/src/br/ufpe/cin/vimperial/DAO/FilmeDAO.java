@@ -11,8 +11,9 @@ import java.util.List;
 import br.ufpe.cin.vimperial.entidades.Filme;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
-public class FilmeDAO {
+public class FilmeDAO{
 	
+
 	public void inserir(Filme filme) {
 		
 			StringBuffer sql = new StringBuffer();

@@ -1,13 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-public class Dependente {
+public class Dependente{
 	
+
 	private Long codDependente;
 	
 	private String nome;
 	private String tipoDependente;
 	private String email;
+	
+	private Cliente cliente;
 	
 
 	public Long getCodDependente() {
@@ -42,5 +45,14 @@ public class Dependente {
 		this.email = email;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
 	
 }

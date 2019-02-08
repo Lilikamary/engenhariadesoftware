@@ -12,7 +12,9 @@ import br.ufpe.cin.vimperial.entidades.Dependente;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
 public class DependenteDAO {
-	
+
+
+
 	public void inserir(Dependente dependente) {
 		
 			StringBuffer sql = new StringBuffer();

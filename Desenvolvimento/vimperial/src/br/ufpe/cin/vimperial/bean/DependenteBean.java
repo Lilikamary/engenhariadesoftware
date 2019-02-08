@@ -6,21 +6,25 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 
+import br.ufpe.cin.vimperial.entidades.Cliente;
 import br.ufpe.cin.vimperial.entidades.Dependente;
+import br.ufpe.cin.vimperial.service.ClienteService;
 import br.ufpe.cin.vimperial.service.DependenteService;
 
 
 @ManagedBean(name="dependenteBean")
-@ViewScoped
+@SessionScoped
 public class DependenteBean implements Serializable{
 	
 
 	private Dependente dependente;
 	private DependenteService service;
 	private List<Dependente> dependentes;
+	
+	private List<Cliente> clientes;
+	private ClienteService clienteService;
 
 	@PostConstruct
 	public void init(){
@@ -28,6 +32,8 @@ public class DependenteBean implements Serializable{
 		dependente = new Dependente();
 		service = new DependenteService();
 		dependentes = service.listarTodos();
+		clienteService = new ClienteService();
+		clientes = clienteService.listarTodos();
 	}
 
 
@@ -63,5 +69,17 @@ public class DependenteBean implements Serializable{
 	public void setDependentes(List<Dependente> dependentes) {
 		this.dependentes = dependentes;
 	}
+
+
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	
 	
 }

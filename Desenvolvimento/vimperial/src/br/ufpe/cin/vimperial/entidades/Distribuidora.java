@@ -1,10 +1,10 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-
 public class Distribuidora {
 
 	
+
 	private Long codDistribuidora;
 	
 	private String razaoSocial;

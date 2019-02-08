@@ -1,9 +1,8 @@
 package br.ufpe.cin.vimperial.entidades;
 
-
 public class Filme {
 
-
+	
 	private Long codFilme;
 	private String tituloOriginal;
 	private String tituloPortugues;

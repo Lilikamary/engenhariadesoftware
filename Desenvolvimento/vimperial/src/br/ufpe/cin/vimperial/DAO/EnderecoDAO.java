@@ -1,5 +1,6 @@
 package br.ufpe.cin.vimperial.DAO;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,8 +12,10 @@ import java.util.List;
 import br.ufpe.cin.vimperial.entidades.Endereco;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
-public class EnderecoDAO {
+public class EnderecoDAO{
 	
+
+
 	public void inserir(Endereco endereco) {
 		
 			StringBuffer sql = new StringBuffer();

@@ -1,5 +1,6 @@
 package br.ufpe.cin.vimperial.DAO;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,8 +16,9 @@ import br.ufpe.cin.vimperial.util.JPAUtil;
 
 public class ClienteDAO {
 	
+
+
 	public void inserir(Cliente cliente) {
-		    System.out.println(cliente.getEndereco().getCodEndereco());
 			StringBuffer sql = new StringBuffer();
 			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho, telefone, endereco) ");
 			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ?, ? ) ");
@@ -37,7 +39,7 @@ public class ClienteDAO {
 				if (rs.next()) { // verifico se o banco retornou
 					cliente.setCodCliente(rs.getLong(1)); // primeira coluna
 				}
-			} catch (SQLException ex) {
+			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
 		}
@@ -45,7 +47,7 @@ public class ClienteDAO {
 	public void excluir(Cliente cliente) {
 
 		StringBuffer sql = new StringBuffer();
-		sql.append("DELETE FROM cliente WHERE codCliente=? ");
+		sql.append("DELETE FROM cliente WHERE codcliente=? ");
 		try (Connection con = new JPAUtil().obterConexao();
 				PreparedStatement pstm = con.prepareStatement(sql.toString())) {
 			pstm.setLong(1,cliente.getCodCliente());

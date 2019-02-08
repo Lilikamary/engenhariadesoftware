@@ -1,9 +1,9 @@
 package br.ufpe.cin.vimperial.entidades;
 
 
-
 public class Endereco {
 	
+
 	private Long codEndereco;
 	
 	private String logradouro;

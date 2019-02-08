@@ -3,6 +3,7 @@ package br.ufpe.cin.vimperial.entidades;
 
 public class Telefone {
 
+
 	private Long codTelefone;
 	
 	private String telefone;

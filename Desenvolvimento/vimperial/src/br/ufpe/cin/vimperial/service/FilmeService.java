@@ -7,6 +7,7 @@ import br.ufpe.cin.vimperial.entidades.Filme;
 
 public class FilmeService {
 	
+	
 	private FilmeDAO dao;
 	
 	public FilmeService(){

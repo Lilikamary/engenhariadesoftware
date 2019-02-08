@@ -7,6 +7,7 @@ import br.ufpe.cin.vimperial.entidades.Cliente;
 
 public class ClienteService {
 	
+	
 	private ClienteDAO dao;
 	
 	public ClienteService(){
@@ -14,7 +15,8 @@ public class ClienteService {
 	}
 	
 	public void incluir(Cliente cliente){
-		 dao.inserir(cliente);
+			dao.inserir(cliente);	
+		
 	}
 	
 	public void excluir(Cliente cliente){

@@ -11,8 +11,9 @@ import java.util.List;
 import br.ufpe.cin.vimperial.entidades.Telefone;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
-public class TelefoneDAO {
+public class TelefoneDAO{
 	
+
 	public void inserir(Telefone telefone) {
 		
 			StringBuffer sql = new StringBuffer();

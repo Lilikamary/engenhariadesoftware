@@ -1,5 +1,6 @@
 package br.ufpe.cin.vimperial.DAO;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +14,9 @@ import br.ufpe.cin.vimperial.util.JPAUtil;
 
 public class DistribuidoraDAO {
 	
+
+
+
 	public void inserir(Distribuidora distribuidora) {
 		
 			StringBuffer sql = new StringBuffer();

@@ -7,6 +7,7 @@ import br.ufpe.cin.vimperial.entidades.Endereco;
 
 public class EnderecoService {
 	
+	
 	private EnderecoDAO dao;
 	
 	public EnderecoService(){
