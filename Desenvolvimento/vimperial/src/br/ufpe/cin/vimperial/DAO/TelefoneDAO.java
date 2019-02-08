@@ -8,38 +8,38 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ufpe.cin.vimperial.entidades.TelefoneCliente;
+import br.ufpe.cin.vimperial.entidades.Telefone;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
-public class TelefoneClienteDAO {
+public class TelefoneDAO {
 	
-	public void inserir(TelefoneCliente telefoneCliente) {
+	public void inserir(Telefone telefone) {
 		
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO telefonecliente (telefone)" );
+			sql.append("INSERT INTO telefone (telefone)" );
 			sql.append("     VALUES ( ? ) ");
 			// try-with-resources - a partir do java 7
 			try (Connection con = new JPAUtil().obterConexao();
 					PreparedStatement pstm = con.prepareStatement(sql.toString(),
 							Statement.RETURN_GENERATED_KEYS)) {
-				pstm.setString(1, telefoneCliente.getTelefone());
+				pstm.setString(1, telefone.getTelefone());
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
-					telefoneCliente.setCodTelefoneCliente(rs.getLong(1)); // primeira coluna
+					telefone.setCodTelefone(rs.getLong(1)); // primeira coluna
 				}
 			} catch (SQLException ex) {
 				ex.printStackTrace();
 			}
 		}
 
-	public void excluir(TelefoneCliente telefoneCliente) {
+	public void excluir(Telefone telefone) {
 
 		StringBuffer sql = new StringBuffer();
-		sql.append("DELETE FROM telefonecliente WHERE codtelefonecliente=? ");
+		sql.append("DELETE FROM telefone WHERE codtelefone=? ");
 		try (Connection con = new JPAUtil().obterConexao();
 				PreparedStatement pstm = con.prepareStatement(sql.toString())) {
-			pstm.setLong(1,telefoneCliente.getCodTelefoneCliente());
+			pstm.setLong(1,telefone.getCodTelefone());
 			pstm.executeUpdate();
 		
 		} catch (SQLException ex) {
@@ -48,26 +48,26 @@ public class TelefoneClienteDAO {
     }
 	
 
-		public List<TelefoneCliente> listarTodos(){
+		public List<Telefone> listarTodos(){
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT codtelefonecliente, telefone");
-		sql.append(" FROM telefonecliente tc ");
-		List<TelefoneCliente> telefoneClientes = new ArrayList<>();
+		sql.append("SELECT codtelefone, telefone");
+		sql.append(" FROM telefone tc ");
+		List<Telefone> telefones = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
 				PreparedStatement pstm = con.prepareStatement(sql.toString())) {
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
-				TelefoneCliente telefoneCliente = new TelefoneCliente();
-				telefoneCliente.setCodTelefoneCliente(rs.getLong("codtelefonecliente"));
-				telefoneCliente.setTelefone(rs.getString("telefone"));
-				telefoneClientes.add(telefoneCliente);
+				Telefone telefone = new Telefone();
+				telefone.setCodTelefone(rs.getLong("codtelefone"));
+				telefone.setTelefone(rs.getString("telefone"));
+				telefones.add(telefone);
 			}
 			rs.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
-		return telefoneClientes;
+		return telefones;
 	}
 
 }

@@ -46,8 +46,26 @@
 				<tds:formInputText id="clientesLocalTrabalho" labelValue="Local de Trabalho"
 					value="#{clienteBean.cliente.localTrabalho}" validationRequired="true"  size="100"/>
 
+				<h:selectOneMenu id="clientesTelefone" filter="true" value="#{clienteBean.cliente.telefone}">
+				   <f:selectItem itemValue="" itemLabel="Selecione o Telefone" />
+            	   <f:selectItems value="#{clienteBean.telefones}" 
+            	           var="telefone"  
+            	           itemValue="#{telefone}" 
+            	           itemLabel="#{telefone.telefone}"
+            	           noSelectionValue="true"/>
+      		   </h:selectOneMenu>
 
-				<p:commandButton action="#{clienteBean.salvar()}"
+				<h:selectOneMenu id="clientesEndereco" value="#{clienteBean.cliente.endereco}">
+				   <f:selectItem itemValue="" itemLabel="Selecione um Endereço" />
+            	   <f:selectItems value="#{clienteBean.telefones}" 
+            	           var="endereco" 
+            	           itemValue="#{endereco}"
+            	           itemLabel="#{endereco.}"
+            	           noSelectionValue="true" />
+      		   </h:selectOneMenu>
+
+
+				<p:commandButton action="#{clienteBean.salvar}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>

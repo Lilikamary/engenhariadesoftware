@@ -2,15 +2,21 @@ package br.ufpe.cin.vimperial.bean;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
 
 import br.ufpe.cin.vimperial.entidades.Cliente;
+import br.ufpe.cin.vimperial.entidades.Endereco;
+import br.ufpe.cin.vimperial.entidades.Telefone;
 import br.ufpe.cin.vimperial.service.ClienteService;
+import br.ufpe.cin.vimperial.service.EnderecoService;
+import br.ufpe.cin.vimperial.service.TelefoneService;
 
 
 @ManagedBean(name="clienteBean")
@@ -21,13 +27,23 @@ public class ClienteBean implements Serializable{
 	private Cliente cliente;
 	private ClienteService service;
 	private List<Cliente> clientes;
+	
+	private List<Telefone> telefones;
+	private TelefoneService telefoneService;
+	
+	private List<Endereco> enderecos;
+	private EnderecoService enderecoService;
 
 	@PostConstruct
 	public void init(){
 		
 		cliente = new Cliente();
 		service = new ClienteService();
+		telefoneService = new TelefoneService();
+		enderecoService = new EnderecoService();
 		clientes = service.listarTodos();
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
 	}
 
 
@@ -36,6 +52,10 @@ public class ClienteBean implements Serializable{
 		service.incluir(cliente);
 		clientes = service.listarTodos();
 		cliente = new Cliente();
+		telefoneService = new TelefoneService();
+		enderecoService = new EnderecoService();		
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
 		return "ok";
 
 	}
@@ -45,6 +65,10 @@ public class ClienteBean implements Serializable{
 		this.service.excluir(cliente);
 		clientes = service.listarTodos();
 		cliente = new Cliente();
+		telefoneService = new TelefoneService();
+		enderecoService = new EnderecoService();		
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
 		return "ok";
 	}
 	
@@ -63,5 +87,30 @@ public class ClienteBean implements Serializable{
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
 	}
+
+
+	public List<Telefone> getTelefones() {
+		return telefones;
+	}
+
+
+	public void setTelefones(List<Telefone> telefones) {
+		this.telefones = telefones;
+	}
+
+
+
+	public void setEnderecos(List<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+
+
+	public List<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+
+
 	
 }

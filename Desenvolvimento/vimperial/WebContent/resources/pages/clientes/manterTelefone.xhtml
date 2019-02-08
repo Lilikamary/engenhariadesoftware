@@ -14,13 +14,13 @@
 			<p:panel id="basic" header="Cadastro de Telefones"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="telefoneClientesTelefone" labelValue="Telefone"
-					value="#{telefoneClienteBean.telefoneCliente.telefone}" validationRequired="true"
+				<tds:formInputText id="telefonesTelefone" labelValue="Telefone"
+					value="#{telefoneBean.telefone.telefone}" validationRequired="true"
 					size="20" >
 				</tds:formInputText>
 
 
-				<p:commandButton action="#{telefoneClienteBean.salvar()}"
+				<p:commandButton action="#{telefoneBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -31,19 +31,19 @@
 
 			<p:panel id="basic" header="Telefones" style="margin-bottom:20px">
 
-				<p:dataTable var="telefoneCliente" value="#{telefoneClienteBean.telefoneClientes}"
+				<p:dataTable var="telefone" value="#{telefoneBean.telefones}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{telefoneCliente.codTelefoneCliente}" />
+						<h:outputText value="#{telefone.codTelefone}" />
 					</p:column>
 
 					<p:column headerText="Telefone">
-						<h:outputText value="#{telefoneCliente.telefone}" />
+						<h:outputText value="#{telefone.telefone}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{telefoneClienteBean.excluir()}"
+							action="#{telefoneBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

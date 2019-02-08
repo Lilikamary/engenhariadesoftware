@@ -11,7 +11,11 @@ public class Cliente  {
 	private String sexo;
 	private String email;
 	private String localTrabalho;
-
+	
+	private Endereco endereco;
+	
+	private Telefone telefone;
+	
 	public Long getCodCliente() {
 		return codCliente;
 	}
@@ -68,4 +72,20 @@ public class Cliente  {
 		this.localTrabalho = localTrabalho;
 	}
 
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public Telefone getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
+	}
+	
 }

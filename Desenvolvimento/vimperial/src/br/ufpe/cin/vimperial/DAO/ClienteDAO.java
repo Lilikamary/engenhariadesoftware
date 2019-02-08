@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ufpe.cin.vimperial.entidades.Cliente;
+import br.ufpe.cin.vimperial.entidades.Endereco;
+import br.ufpe.cin.vimperial.entidades.Telefone;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
 public class ClienteDAO {
@@ -16,8 +18,8 @@ public class ClienteDAO {
 	public void inserir(Cliente cliente) {
 		
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho) ");
-			sql.append("     VALUES ( ?, ?, ?, ?,?, ? ) ");
+			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho, telefone, endereco) ");
+			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ?, ? ) ");
 			// try-with-resources - a partir do java 7
 			try (Connection con = new JPAUtil().obterConexao();
 					PreparedStatement pstm = con.prepareStatement(sql.toString(),
@@ -28,6 +30,8 @@ public class ClienteDAO {
 				pstm.setString(4, cliente.getSexo());
 				pstm.setString(5, cliente.getEmail());
 				pstm.setString(6, cliente.getLocalTrabalho());
+				pstm.setLong(7, cliente.getTelefone().getCodTelefone());
+				pstm.setLong(8, cliente.getEndereco().getCodEndereco());
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
@@ -56,7 +60,7 @@ public class ClienteDAO {
 		public List<Cliente> listarTodos(){
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT codcliente, nome, cpf, datanascimento, email, localtrabalho, sexo");
+		sql.append("SELECT codcliente, nome, cpf, datanascimento, email, localtrabalho, sexo, telefone, endereco");
 		sql.append(" FROM cliente c ");
 		List<Cliente> clientes = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
@@ -64,6 +68,8 @@ public class ClienteDAO {
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
 				Cliente cliente = new Cliente();
+				Endereco endereco = new Endereco();
+				Telefone telefone = new Telefone();
 				cliente.setCodCliente(rs.getLong("codcliente"));
 				cliente.setNome(rs.getString("nome"));
 				cliente.setCpf(rs.getString("cpf"));
@@ -71,6 +77,10 @@ public class ClienteDAO {
 				cliente.setEmail(rs.getString("email"));
 				cliente.setLocalTrabalho(rs.getString("localtrabalho"));
 				cliente.setSexo(rs.getString("sexo"));
+				endereco.setCodEndereco(rs.getLong("endereco"));
+				telefone.setCodTelefone(rs.getLong("telefone"));
+				cliente.setEndereco(endereco);
+				cliente.setTelefone(telefone);
 				clientes.add(cliente);
 			}
 			rs.close();
