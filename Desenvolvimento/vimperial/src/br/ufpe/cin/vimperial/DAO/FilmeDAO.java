@@ -8,7 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufpe.cin.vimperial.entidades.Distribuidora;
 import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.entidades.TipoMidia;
 import br.ufpe.cin.vimperial.util.JPAUtil;
 
 public class FilmeDAO{
@@ -17,8 +19,8 @@ public class FilmeDAO{
 	public void inserir(Filme filme) {
 		
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO filme(tituloOriginal,tituloPortugues, direcao, genero, paisProducao, ano, duracao, sinopse) ");
-			sql.append("     VALUES ( ?, ?, ?, ?,?, ?, ?,? ) ");
+			sql.append("INSERT INTO filme(tituloOriginal,tituloPortugues, direcao, genero, paisProducao, ano, duracao, sinopse, quantidade, tipomidia, distribuidora) ");
+			sql.append("     VALUES ( ?, ?, ?, ?,?, ?, ?,?, ?, ?, ? ) ");
 			// try-with-resources - a partir do java 7
 			try (Connection con = new JPAUtil().obterConexao();
 					PreparedStatement pstm = con.prepareStatement(sql.toString(),
@@ -31,6 +33,9 @@ public class FilmeDAO{
 				pstm.setString(6, filme.getAno());
 				pstm.setString(7, filme.getDuracao());
 				pstm.setString(8, filme.getSinopse());
+				pstm.setLong(9, filme.getQuantidade());
+				pstm.setLong(10, filme.getTipoMidia().getCodMidia());
+				pstm.setLong(11, filme.getDistribuidora().getCodDistribuidora());
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
@@ -59,7 +64,7 @@ public class FilmeDAO{
 		public List<Filme> listarTodos(){
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT codfilme, titulooriginal, tituloportugues, genero, direcao, ano, duracao, paisproducao,sinopse");
+		sql.append("SELECT codfilme, titulooriginal, tituloportugues, genero, direcao, ano, duracao, paisproducao,sinopse, quantidade, tipomidia, distribuidora");
 		sql.append(" FROM filme f ");
 		List<Filme> filmes = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
@@ -67,6 +72,8 @@ public class FilmeDAO{
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
 				Filme filme = new Filme();
+				TipoMidia tipoMidia = new TipoMidia();
+				Distribuidora distribuidora = new Distribuidora();
 				filme.setCodFilme(rs.getLong("codFilme"));
 				filme.setTituloOriginal(rs.getString("tituloOriginal"));
 				filme.setTituloPortugues(rs.getString("tituloPortugues"));
@@ -76,6 +83,11 @@ public class FilmeDAO{
 				filme.setDuracao(rs.getString("duracao"));
 				filme.setPaisProducao(rs.getString("paisProducao"));
 				filme.setSinopse(rs.getString("sinopse"));
+				filme.setQuantidade(rs.getLong("quantidade"));
+				tipoMidia.setCodMidia(rs.getLong("tipomidia"));
+				distribuidora.setCodDistribuidora(rs.getLong("distribuidora"));
+				filme.setTipoMidia(tipoMidia);
+				filme.setDistribuidora(distribuidora);
 				filmes.add(filme);
 			}
 			rs.close();

@@ -12,9 +12,11 @@ import javax.faces.bean.ViewScoped;
 import br.ufpe.cin.vimperial.entidades.Cliente;
 import br.ufpe.cin.vimperial.entidades.Distribuidora;
 import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.entidades.TipoMidia;
 import br.ufpe.cin.vimperial.service.ClienteService;
 import br.ufpe.cin.vimperial.service.DistribuidoraService;
 import br.ufpe.cin.vimperial.service.FilmeService;
+import br.ufpe.cin.vimperial.service.TipoMidiaService;
 
 
 @ManagedBean(name="filmeBean")
@@ -28,6 +30,9 @@ public class FilmeBean implements Serializable{
 	
 	private List<Distribuidora> distribuidoras;
 	private DistribuidoraService distribuidoraService;
+	
+	private List<TipoMidia> tipoMidias;
+	private TipoMidiaService tipoMidiaService;
 
 	@PostConstruct
 	public void init(){
@@ -37,6 +42,8 @@ public class FilmeBean implements Serializable{
 		filmes = service.listarTodos();
 		distribuidoraService = new DistribuidoraService();
 		distribuidoras = distribuidoraService.listarTodos();
+		tipoMidiaService = new TipoMidiaService();
+		tipoMidias = tipoMidiaService.listarTodos();
 	}
 
 
@@ -84,6 +91,19 @@ public class FilmeBean implements Serializable{
 	public void setDistribuidoras(List<Distribuidora> distribuidoras) {
 		this.distribuidoras = distribuidoras;
 	}
+
+
+
+	public List<TipoMidia> getTipoMidias() {
+		return tipoMidias;
+	}
+
+
+
+	public void setTipoMidias(List<TipoMidia> tipoMidias) {
+		this.tipoMidias = tipoMidias;
+	}
+	
 	
 	
 	

@@ -54,7 +54,22 @@
 					value="#{filmeBean.filme.sinopse}"
 					validationRequired="true" size="100"/>
 					
+				<tds:formInputText id="filmesQuantidade" labelValue="Quantidade"
+					value="#{filmeBean.filme.quantidade}"
+					validationRequired="true" size="100"/>
+										
+					
 				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					 <p:outputLabel for="tipoMidia" value="Tipo de Mídia" />
+					 <p:selectOneMenu id="tipoMidia" filter="true" value="#{filmeBean.filme.tipoMidia}" style="margin-bottom:10px">					 
+						 <f:selectItem itemLabel="Selecionar Tipo de Midia" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{filmeBean.tipoMidias}" 
+           		     			var="tipomidia" 
+           		     			itemValue="#{tipomidia}" 
+           		     			itemLabel="#{tipomidia.tipoMidia}" />
+           		 	</p:selectOneMenu>
+
 					 <p:outputLabel for="distribuidora" value="Distribuidora:" />
 					 <p:selectOneMenu id="distribuidora" filter="true" value="#{filmeBean.filme.distribuidora}" style="margin-bottom:10px">					 
 						 <f:selectItem itemLabel="Selecionar Distribuidora" itemValue="" />
