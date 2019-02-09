@@ -12,7 +12,7 @@
 		<h:form id="meuFormulario">
 
 			<p:panel id="basic" header="Cadastro de Dependentes"
-				style="margin-bottom:20px">
+				style="margin-bottom:10px">
 
 				<tds:formInputText id="dependentesNome" labelValue="Nome Dependente"
 					value="#{dependenteBean.dependente.nome}" validationRequired="true"
@@ -31,7 +31,7 @@
 
 				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 					 <p:outputLabel for="cliente" value="Cliente:" />
-					 <p:selectOneMenu id="cliente" filter="true" value="#{dependenteBean.dependente.cliente}" style="width:125px">					 
+					 <p:selectOneMenu id="cliente" filter="true" value="#{dependenteBean.dependente.cliente}" style="margin-bottom:10px">					 
 						 <f:selectItem itemLabel="Selecionar Cliente" itemValue="" />
            		     	  <f:selectItems 
            		     			value="#{dependenteBean.dependentes}" 

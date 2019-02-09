@@ -32,7 +32,7 @@
 
 			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 				 <p:outputLabel for="endereco" value="Endereço:" />
-				 <p:selectOneMenu id="endereco" filter="true" value="#{distribuidoraBean.distribuidora.endereco}" style="width:125px">					 
+				 <p:selectOneMenu id="endereco" filter="true" value="#{distribuidoraBean.distribuidora.endereco}" style="margin-bottom:10px">					 
 					 <f:selectItem itemLabel="Selecionar Endereço" itemValue="" />
            		     <f:selectItems 
            		     			value="#{distribuidoraBean.enderecos}" 
@@ -42,7 +42,7 @@
            		 </p:selectOneMenu>    
 
 				 <p:outputLabel for="telefone" value="Telefone:" />
-				 <p:selectOneMenu id="telefone" filter="true" value="#{distribuidoraBean.distribuidora.telefone}" style="width:125px">					 
+				 <p:selectOneMenu id="telefone" filter="true" value="#{distribuidoraBean.distribuidora.telefone}" style="margin-bottom:10px">					 
 					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
            		     <f:selectItems 
            		     			value="#{distribuidoraBean.telefones}" 

@@ -20,8 +20,8 @@ public class ClienteDAO {
 
 	public void inserir(Cliente cliente) {
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho, telefone, endereco) ");
-			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ?, ? ) ");
+			sql.append("INSERT INTO cliente(nome, cpf, datanascimento, sexo, email, localtrabalho, telefone, endereco, ativo) ");
+			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ? ) ");
 			// try-with-resources - a partir do java 7
 			try (Connection con = new JPAUtil().obterConexao();
 					PreparedStatement pstm = con.prepareStatement(sql.toString(),
@@ -34,6 +34,7 @@ public class ClienteDAO {
 				pstm.setString(6, cliente.getLocalTrabalho());
 				pstm.setLong(7, cliente.getTelefone().getCodTelefone());
 				pstm.setLong(8, cliente.getEndereco().getCodEndereco());
+				pstm.setString(9, cliente.getAtivo());
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
@@ -62,7 +63,7 @@ public class ClienteDAO {
 		public List<Cliente> listarTodos(){
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT codcliente, nome, cpf, datanascimento, email, localtrabalho, sexo, telefone, endereco");
+		sql.append("SELECT codcliente, nome, cpf, datanascimento, email, localtrabalho, sexo, telefone, endereco, ativo");
 		sql.append(" FROM cliente c ");
 		List<Cliente> clientes = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
@@ -83,6 +84,7 @@ public class ClienteDAO {
 				telefone.setCodTelefone(rs.getLong("telefone"));
 				cliente.setEndereco(endereco);
 				cliente.setTelefone(telefone);
+				cliente.setAtivo(rs.getString("ativo"));
 				clientes.add(cliente);
 			}
 			rs.close();

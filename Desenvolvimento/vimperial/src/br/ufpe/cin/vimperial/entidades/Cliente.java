@@ -9,6 +9,7 @@ public class Cliente {
 	private String sexo;
 	private String email;
 	private String localTrabalho;
+	private String ativo;
 	
 	private Endereco endereco;
 	
@@ -85,5 +86,15 @@ public class Cliente {
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
 	}
+
+	public String getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(String ativo) {
+		this.ativo = ativo;
+	}
+	
+	
 	
 }

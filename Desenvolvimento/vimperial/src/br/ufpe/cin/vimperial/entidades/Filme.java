@@ -12,6 +12,9 @@ public class Filme {
 	private String ano;
 	private String duracao;
 	private String sinopse;
+	private Long quantidade;
+	
+	private TipoMidia tipoMidia;
 	
 	private Distribuidora distribuidora;
 	
@@ -95,6 +98,22 @@ public class Filme {
 
 	public void setDistribuidora(Distribuidora distribuidora) {
 		this.distribuidora = distribuidora;
+	}
+
+	public Long getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Long quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public TipoMidia getTipoMidia() {
+		return tipoMidia;
+	}
+
+	public void setTipoMidia(TipoMidia tipoMidia) {
+		this.tipoMidia = tipoMidia;
 	}
 	
 	

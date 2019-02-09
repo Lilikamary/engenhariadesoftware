@@ -14,6 +14,13 @@
 			<p:panel id="basic" header="Cadastro de Cliente"
 				style="margin-bottom:20px">
 
+      <p:outputLabel for="ativo" value="Ativo:" />
+        <p:selectOneMenu id="ativo" filter="true" value="#{clienteBean.cliente.ativo}" style="width:125px">
+            <f:selectItem itemLabel="Selecionar" itemValue="" />
+            <f:selectItem itemLabel="Ativo" itemValue="Ativo" />
+            <f:selectItem itemLabel="Desativado" itemValue="Desativado" />
+        </p:selectOneMenu>
+			
 				<tds:formInputText id="clientesNome" labelValue="Nome"
 					value="#{clienteBean.cliente.nome}" validationRequired="true"
 					size="100" >
@@ -46,9 +53,9 @@
 				<tds:formInputText id="clientesLocalTrabalho" labelValue="Local de Trabalho"
 					value="#{clienteBean.cliente.localTrabalho}" validationRequired="true"  size="100"/>
 
-			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+			<h:panelGrid columns="2" cellpadding="5">
 				 <p:outputLabel for="endereco" value="Endereço:" />
-				 <p:selectOneMenu id="endereco" filter="true" value="#{clienteBean.cliente.endereco}" style="width:125px">					 
+				 <p:selectOneMenu id="endereco" filter="true" value="#{clienteBean.cliente.endereco}" style="margin-bottom:10px">					 
 					 <f:selectItem itemLabel="Selecionar Endereço" itemValue="" />
            		     <f:selectItems 
            		     			value="#{clienteBean.enderecos}" 
@@ -58,7 +65,7 @@
            		 </p:selectOneMenu>    
 
 				 <p:outputLabel for="telefone" value="Telefone:" />
-				 <p:selectOneMenu id="telefone" filter="true" value="#{clienteBean.cliente.telefone}" style="width:125px">					 
+				 <p:selectOneMenu id="telefone" filter="true" value="#{clienteBean.cliente.telefone}" style="margin-bottom:10px">					 
 					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
            		     <f:selectItems 
            		     			value="#{clienteBean.telefones}" 
