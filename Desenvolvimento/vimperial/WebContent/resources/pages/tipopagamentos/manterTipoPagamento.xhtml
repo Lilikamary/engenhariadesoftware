@@ -11,16 +11,16 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Tipo de Mídias"
+			<p:panel id="basic" header="Cadastro de Tipo Pagamentos"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="tipoMidiasTelefone" labelValue="Tipo de Mídia"
-					value="#{tipoMidiaBean.tipoMidia.tipoMidia}" validationRequired="true"
+				<tds:formInputText id="tipoPagamentosTipos" labelValue="Tipo de Pagamento"
+					value="#{tipoPagamentoBean.tipoPgamento.tipoPagamento}" validationRequired="true"
 					size="20" >
 				</tds:formInputText>
 
 
-				<p:commandButton action="#{tipoMidiaBean.salvar()}"
+				<p:commandButton action="#{telefoneBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -29,21 +29,21 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Tipo de Mídias" style="margin-bottom:20px">
+			<p:panel id="basic" header="TipoPagamentos" style="margin-bottom:20px">
 
-				<p:dataTable var="tipoMidia" value="#{tipoMidiaBean.tipoMidias}"
+				<p:dataTable var="tipoPagamento" value="#{tipoPagamentoBean.tipoPgamentos}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{tipoMidia.codMidia}" />
+						<h:outputText value="#{tipoPagamento.codTipoPagamento}" />
 					</p:column>
 
-					<p:column headerText="Tipo Mídia">
-						<h:outputText value="#{tipoMidia.tipoMidia}" />
+					<p:column headerText="Tipo Pagamento">
+						<h:outputText value="#{tipoPagamento.tipoPagamento}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{tipoMidiaBean.excluir()}"
+							action="#{telefoneBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
