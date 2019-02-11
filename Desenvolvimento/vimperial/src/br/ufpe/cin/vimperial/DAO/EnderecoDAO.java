@@ -60,7 +60,7 @@ public class EnderecoDAO{
 		
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT codendereco, logradouro, numero, bairro, cidade, cep");
-		sql.append(" FROM endereco d ");
+		sql.append(" FROM endereco ");
 		List<Endereco> enderecos = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
 				PreparedStatement pstm = con.prepareStatement(sql.toString())) {
@@ -76,6 +76,7 @@ public class EnderecoDAO{
 				enderecos.add(endereco);
 			}
 			rs.close();
+			
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}
