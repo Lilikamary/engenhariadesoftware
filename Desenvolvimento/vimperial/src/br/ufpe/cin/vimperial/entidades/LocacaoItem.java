@@ -1,9 +1,8 @@
 package br.ufpe.cin.vimperial.entidades;
 
-public class Locacao {
+public class LocacaoItem {
 	
-	private Cliente cliente;
-	
+	private Locacao locacao;
 	
 
 }
