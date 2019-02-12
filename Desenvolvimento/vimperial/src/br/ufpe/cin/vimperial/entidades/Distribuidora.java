@@ -1,9 +1,17 @@
 package br.ufpe.cin.vimperial.entidades;
 
+import java.io.Serializable;
 
-public class Distribuidora {
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class Distribuidora implements BaseEntity, Serializable {
 
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Long codDistribuidora;
 	
@@ -51,6 +59,11 @@ public class Distribuidora {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codDistribuidora);
 	}
 
 }

@@ -1,7 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
-public class Cliente {
+import java.io.Serializable;
 
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class Cliente implements BaseEntity,Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long codCliente;
 	private String nome;
 	private String cpf;
@@ -93,6 +102,11 @@ public class Cliente {
 
 	public void setAtivo(String ativo) {
 		this.ativo = ativo;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codCliente);
 	}
 	
 	

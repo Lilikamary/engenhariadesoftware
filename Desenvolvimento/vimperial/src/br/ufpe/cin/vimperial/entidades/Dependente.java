@@ -1,8 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
+import java.io.Serializable;
 
-public class Dependente{
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class Dependente implements BaseEntity, Serializable{
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Long codDependente;
 	
@@ -51,6 +59,11 @@ public class Dependente{
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codDependente);
 	}
 
 	

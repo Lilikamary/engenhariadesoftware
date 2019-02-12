@@ -1,6 +1,15 @@
 package br.ufpe.cin.vimperial.entidades;
 
-public class TipoPagamento {
+import java.io.Serializable;
+
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class TipoPagamento implements BaseEntity, Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private Long codTipoPagamento;
 	private String tipoPagamento;
@@ -16,6 +25,10 @@ public class TipoPagamento {
 	}
 	public void setTipoPagamento(String tipoPagamento) {
 		this.tipoPagamento = tipoPagamento;
+	}
+	@Override
+	public Long getId() {
+		return new Long(codTipoPagamento);
 	}
 	
 	

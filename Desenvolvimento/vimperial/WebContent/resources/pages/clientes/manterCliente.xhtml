@@ -54,8 +54,10 @@
 					value="#{clienteBean.cliente.localTrabalho}" validationRequired="true"  size="100"/>
 
 			<h:panelGrid columns="2" cellpadding="5">
-				 <p:outputLabel for="endereco" value="Endereço:" />
-				 <p:selectOneMenu id="endereco" filter="true" value="#{clienteBean.cliente.endereco}" style="margin-bottom:10px">					 
+				 <p:outputLabel value="Endereço:" />
+				 <p:selectOneMenu id="clientesEndereco" filter="true" 
+				 value="#{clienteBean.cliente.endereco}" style="margin-bottom:10px"
+				 converter="simpleEntityConverter">					 
 					 <f:selectItem itemLabel="Selecionar Endereço" itemValue="" />
            		     <f:selectItems 
            		     			value="#{clienteBean.enderecos}" 
@@ -63,9 +65,11 @@
            		     			itemValue="#{endereco}" 
            		     			itemLabel="#{endereco.logradouro}, #{endereco.numero} - #{endereco.cidade}" />
            		 </p:selectOneMenu>    
-
-				 <p:outputLabel for="telefone" value="Telefone:" />
-				 <p:selectOneMenu id="telefone" filter="true" value="#{clienteBean.cliente.telefone}" style="margin-bottom:10px">					 
+           		 
+				 <p:outputLabel value="Telefone:" />
+				 <p:selectOneMenu id="clientesTelefone" filter="true" 
+				 value="#{clienteBean.cliente.telefone}" style="margin-bottom:10px"
+				 converter="simpleEntityConverter">					 
 					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
            		     <f:selectItems 
            		     			value="#{clienteBean.telefones}" 

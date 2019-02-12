@@ -1,7 +1,15 @@
 package br.ufpe.cin.vimperial.entidades;
 
-public class TipoMidia {
+import java.io.Serializable;
+
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class TipoMidia implements BaseEntity, Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long codMidia;
 	private String tipoMidia;
 	
@@ -16,6 +24,10 @@ public class TipoMidia {
 	}
 	public void setTipoMidia(String tipoMidia) {
 		this.tipoMidia = tipoMidia;
+	}
+	@Override
+	public Long getId() {
+		return new Long(codMidia);
 	}
 	
 	

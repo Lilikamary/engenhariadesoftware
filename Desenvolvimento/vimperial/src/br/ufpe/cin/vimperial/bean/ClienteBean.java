@@ -42,13 +42,13 @@ public class ClienteBean implements Serializable{
 		telefoneService = new TelefoneService();
 		enderecoService = new EnderecoService();
 		
+		
 		telefones = telefoneService.listarTodos();
 		enderecos = enderecoService.listarTodos();
 	}
 	
 
 	public String salvar(){
-		
 		service.incluir(cliente);
 		clientes = service.listarTodos();
 		cliente = new Cliente();
@@ -107,5 +107,6 @@ public class ClienteBean implements Serializable{
 	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
+	
 	
 }

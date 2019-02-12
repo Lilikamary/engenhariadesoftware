@@ -1,8 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
+import java.io.Serializable;
 
-public class Endereco {
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class Endereco implements BaseEntity, Serializable{
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Long codEndereco;
 	
@@ -59,5 +67,10 @@ public class Endereco {
 	
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codEndereco);
 	}
 }

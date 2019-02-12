@@ -1,8 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
-public class Filme {
+import java.io.Serializable;
+
+import br.ufpe.cin.vimperial.converter.BaseEntity;
+
+public class Filme implements BaseEntity, Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long codFilme;
 	private String tituloOriginal;
 	private String tituloPortugues;
@@ -114,6 +122,11 @@ public class Filme {
 
 	public void setTipoMidia(TipoMidia tipoMidia) {
 		this.tipoMidia = tipoMidia;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codFilme);
 	}
 	
 	

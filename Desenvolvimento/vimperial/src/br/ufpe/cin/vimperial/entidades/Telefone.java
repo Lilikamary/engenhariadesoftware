@@ -1,8 +1,16 @@
 package br.ufpe.cin.vimperial.entidades;
 
+import java.io.Serializable;
 
-public class Telefone {
+import br.ufpe.cin.vimperial.converter.BaseEntity;
 
+public class Telefone implements BaseEntity, Serializable{
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Long codTelefone;
 	
@@ -23,6 +31,11 @@ public class Telefone {
 	
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	@Override
+	public Long getId() {
+		return new Long(codTelefone);
 	}
 	
 	
