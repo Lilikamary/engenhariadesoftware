@@ -1,0 +1,28 @@
+Relatório de Desenvolvimento
+
+O desenvolvimento da aplicação começou com a determinação de qual IDE, linguagem, banco de dados, 
+sempre respeitando os requisitos do cliente.
+Primeiramente, foi definido utilizar o Netbeans como IDE, bem como JSF e banco de dados Postgresql.  
+Foi escolhido o Netbeans devido sua facilidade no desenvolvimento.
+Porém apesar disto, verificou-se que a alteração do código gerado pela ferramenta causava algumas 
+inconsistências e isto fez com que o desenvolvimento atrasasse.
+Como o membro escolhido para fazer o desenvolvimento, tinha capacitação inicial em JSF e Postgresql utilizando 
+Eclipse, mudou-se a ferramenta justamente para se ter maior agilidade e reaproveitamento de aplicações utilizadas 
+nas capacitações realizadas.
+Uma das primeiras dificuldades é a falta de experiência em desenvolver uma aplicação do início ao fim, visto que 
+por mais que foi feito investimento em capacitação ao longo da vida profissional, nunca tinha sido feito o 
+desenvolvimento de uma aplicação, mas sim coisas pon-
+tuais de manutenção e criação de módulos pequenos, em aplicações desktop com ferramentas case (não havia a 
+necessidade de criação de telas, códigos dos CRUDs - Create/Read/Update/Delete).
+Outra dificuldade encontrada foi acertar a versão das bibliotecas, visto que devido a incompatibilidade entre as 
+ferramentas utilizadas - principalmente relacionada a versão do JAVA, que ocasionou um refazimento do projeto de 
+forma demasiada.
+Com auxílio de outros desenvolvedores, tutoriais e video-aulas, conseguiu chegar a uma configuração que o 
+projeto finalmente conseguiu sair do papel.
+A configuração utilizada foi:
+IDE: Eclipse Mars
+JAVA: Versão 1.8_201
+Tomcat: 9.0
+Postgresql: versão 11 no servidor e 9.6 para desenvolvimento.
+Utilizado MVC para implementação.
+
