@@ -61,7 +61,9 @@
 					
 				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 					 <p:outputLabel for="tipoMidia" value="Tipo de Mídia" />
-					 <p:selectOneMenu id="tipoMidia" filter="true" value="#{filmeBean.filme.tipoMidia}" style="margin-bottom:10px">					 
+					 <p:selectOneMenu id="tipoMidia" filter="true" 
+					 value="#{filmeBean.filme.tipoMidia}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
 						 <f:selectItem itemLabel="Selecionar Tipo de Midia" itemValue="" />
            		     	  <f:selectItems 
            		     			value="#{filmeBean.tipoMidias}" 

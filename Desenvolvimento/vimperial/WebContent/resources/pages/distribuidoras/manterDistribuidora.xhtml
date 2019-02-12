@@ -32,7 +32,9 @@
 
 			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 				 <p:outputLabel for="endereco" value="Endereço:" />
-				 <p:selectOneMenu id="endereco" filter="true" value="#{distribuidoraBean.distribuidora.endereco}" style="margin-bottom:10px">					 
+				 <p:selectOneMenu id="endereco" filter="true" 
+				 value="#{distribuidoraBean.distribuidora.endereco}" style="margin-bottom:10px"
+				 converter="simpleEntityConverter">					 
 					 <f:selectItem itemLabel="Selecionar Endereço" itemValue="" />
            		     <f:selectItems 
            		     			value="#{distribuidoraBean.enderecos}" 
