@@ -24,12 +24,6 @@
 					validationRequired="true" size="100">
 				</tds:formInputText>
 
-				<tds:formInputText id="distribuidoraTelefone"
-					labelValue="Telefone Distribuidora"
-					value="#{distribuidoraBean.distribuidora.telefone}"
-					validationRequired="true" >
-				</tds:formInputText>
-
 			<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
 				 <p:outputLabel for="endereco" value="Endereço:" />
 				 <p:selectOneMenu id="endereco" filter="true" 
@@ -44,7 +38,9 @@
            		 </p:selectOneMenu>    
 
 				 <p:outputLabel for="telefone" value="Telefone:" />
-				 <p:selectOneMenu id="telefone" filter="true" value="#{distribuidoraBean.distribuidora.telefone}" style="margin-bottom:10px">					 
+				 <p:selectOneMenu id="telefone" filter="true" 
+				 value="#{distribuidoraBean.distribuidora.telefone}" style="margin-bottom:10px"
+				 converter="simpleEntityConverter">					 
 					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
            		     <f:selectItems 
            		     			value="#{distribuidoraBean.telefones}" 
@@ -81,7 +77,7 @@
 					</p:column>
 
 					<p:column headerText="Telefone">
-						<h:outputText value="#{distribuidora.telefone}" />
+						<h:outputText value="#{distribuidora.telefone.telefone}" />
 					</p:column>
 
 					<p:column headerText="Ações">

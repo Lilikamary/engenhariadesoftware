@@ -41,8 +41,10 @@ public class FilmeBean implements Serializable{
 		filme = new Filme();
 		service = new FilmeService();
 		filmes = service.listarTodos();
+		
 		distribuidoraService = new DistribuidoraService();
 		distribuidoras = distribuidoraService.listarTodos();
+		
 		tipoMidiaService = new TipoMidiaService();
 		tipoMidias = tipoMidiaService.listarTodos();
 	}
@@ -81,25 +83,17 @@ public class FilmeBean implements Serializable{
 		this.filmes = filmes;
 	}
 
-
-
 	public List<Distribuidora> getDistribuidoras() {
 		return distribuidoras;
 	}
-
-
 
 	public void setDistribuidoras(List<Distribuidora> distribuidoras) {
 		this.distribuidoras = distribuidoras;
 	}
 
-
-
 	public List<TipoMidia> getTipoMidias() {
 		return tipoMidias;
 	}
-
-
 
 	public void setTipoMidias(List<TipoMidia> tipoMidias) {
 		this.tipoMidias = tipoMidias;

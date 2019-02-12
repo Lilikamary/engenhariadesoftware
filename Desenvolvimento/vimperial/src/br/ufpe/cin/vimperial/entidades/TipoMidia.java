@@ -10,6 +10,7 @@ public class TipoMidia implements BaseEntity, Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Long codMidia;
 	private String tipoMidia;
 	
