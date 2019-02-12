@@ -9,7 +9,6 @@ import javax.faces.convert.FacesConverter;
 
 import br.ufpe.cin.vimperial.converter.BaseEntity;
 
-@FacesConverter("simpleEntityConverter")
 public class SimpleEntityConverter implements Converter {
 	
 	public Object getAsObject(FacesContext ctx, UIComponent component, String value) {  
