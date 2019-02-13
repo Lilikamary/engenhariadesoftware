@@ -2,9 +2,9 @@ package br.ufpe.cin.vimperial.entidades;
 
 import java.io.Serializable;
 
-import br.ufpe.cin.vimperial.converter.BaseEntity;
 
-public class Telefone implements BaseEntity, Serializable{
+
+public class Telefone implements Serializable{
 
 
 	/**
@@ -33,11 +33,6 @@ public class Telefone implements BaseEntity, Serializable{
 		this.telefone = telefone;
 	}
 
-	@Override
-	public Long getId() {
-		return new Long(codTelefone);
-	}
-	
 	
 	
 }
