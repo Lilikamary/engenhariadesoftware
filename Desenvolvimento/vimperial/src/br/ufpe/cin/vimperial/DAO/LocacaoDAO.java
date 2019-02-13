@@ -72,7 +72,7 @@ public class LocacaoDAO{
 				cliente.setNome(rs.getString("c.nome"));
 				locacao.setCliente(cliente);
 				locacao.setDataLocacao(rs.getDate("l.datalocacao"));
-				locacao.setDataDevolucao(rs.getDate("l.datadevolucao"));
+				locacao.setDataDevolucaoBanco(rs.getDate("l.datadevolucao"));
 				locacao.setMulta(rs.getLong("l.multa"));
 				locacoes.add(locacao);
 			}

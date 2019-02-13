@@ -29,21 +29,15 @@
            		     			itemLabel="#{cliente.nome}" />
            		 	</p:selectOneMenu>
            		 </h:panelGrid>	    
-           		 <tds:formInputText id="locacaoDataLocacao"
-					labelValue="Data de Locação"
-					value="#{locacaoBean.locacao.dataLocacao}"
-					validationRequired="true" >
+           		 
+           		<h:outputText id="dataLocacao"   value="#{locacaoBean.locacao.dataLocacao}" />
 					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-				</tds:formInputText>
+				<f:convertDateTime pattern="dd/MM/yyyy" for="dataLocacao"/>
 
-           		 <tds:formInputText id="locacaoDataDevolucao"
-					labelValue="Data de Devolução"
-					value="#{locacaoBean.locacao.dataDevolucao}"
-					validationRequired="true" >
+           		<h:outputText id="dataDevolucao"   value="#{locacaoBean.locacao.dataDevolucao}" />
 					
-					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
-				</tds:formInputText>
+				<f:convertDateTime pattern="dd/MM/yyyy" for="dataDevolucao"/>
+
 
            		 <h:outputText value="#{locacaoBean.locacao.multa}" title="Multa:" />
            		 <p:commandButton action="#{locacaoBean.salvar()}"

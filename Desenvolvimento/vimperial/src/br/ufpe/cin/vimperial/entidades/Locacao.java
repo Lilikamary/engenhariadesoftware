@@ -1,6 +1,7 @@
 package br.ufpe.cin.vimperial.entidades;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 import br.ufpe.cin.vimperial.converter.BaseEntity;
@@ -43,17 +44,21 @@ public class Locacao implements BaseEntity, Serializable{
 	}
 
 	public void setDataLocacao(Date dataLocacao) {
-		this.dataLocacao = dataLocacao;
+		this.dataLocacao = new Date();
 	}
 
 	public Date getDataDevolucao() {
 		return dataDevolucao;
 	}
 
-	public void setDataDevolucao(Date dataDevolucao) {
-		this.dataDevolucao = dataDevolucao;
+	public void setDataDevolucao(int dias) {
+		this.dataDevolucao = somarData(dias, dataLocacao);
 	}
 
+	public void setDataDevolucaoBanco(Date dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
+	
 	public Long getMulta() {
 		return multa;
 	}
@@ -67,7 +72,12 @@ public class Locacao implements BaseEntity, Serializable{
 		return new Long (codLocacao);
 	}
 	
-	
+	 public static Date somarData (int dias,Date data) {
+	       Calendar calendar = Calendar.getInstance();
+	       calendar.setTime(data);
+	       calendar.add(Calendar.DATE, dias);
+	       return calendar.getTime();
+	    }
 	
 
 }
