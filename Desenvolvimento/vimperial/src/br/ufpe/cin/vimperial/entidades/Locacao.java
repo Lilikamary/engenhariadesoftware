@@ -59,6 +59,10 @@ public class Locacao implements BaseEntity, Serializable{
 		this.dataDevolucao = dataDevolucao;
 	}
 	
+	public void setDataLocacaoBanco(Date dataLocacao) {
+		this.dataLocacao = dataLocacao;
+	}
+	
 	public Long getMulta() {
 		return multa;
 	}

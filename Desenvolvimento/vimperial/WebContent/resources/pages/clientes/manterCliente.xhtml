@@ -20,7 +20,7 @@
             <f:selectItem itemLabel="Ativo" itemValue="Ativo" />
             <f:selectItem itemLabel="Desativado" itemValue="Desativado" />
         </p:selectOneMenu>
-			
+			<br />
 				<tds:formInputText id="clientesNome" labelValue="Nome"
 					value="#{clienteBean.cliente.nome}" validationRequired="true"
 					size="100" >
@@ -56,7 +56,7 @@
 				
 				<tds:formInputText id="clientesTelefone" labelValue="Telefone"
 					value="#{clienteBean.cliente.telefone}" validationRequired="true"  size="10"/>
-
+			<br />
 			<h:panelGrid columns="2" cellpadding="5">
 				 <p:outputLabel value="Endereço:" />
 				 <p:selectOneMenu id="clientesEndereco" filter="true" 
@@ -73,7 +73,7 @@
 
 			</h:panelGrid>
 
-
+		<br />
 				<p:commandButton action="#{clienteBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    

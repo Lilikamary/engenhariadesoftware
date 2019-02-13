@@ -2,6 +2,7 @@ package br.ufpe.cin.vimperial.bean;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -32,6 +33,7 @@ public class LocacaoBean implements Serializable{
 		locacao = new Locacao();
 		service = new LocacaoService();
 		locacoes = service.listarTodos();
+		locacao.setDataLocacaoBanco(new Date());
 		
 		clienteService = new ClienteService();
 		clientes = clienteService.listarTodos();
