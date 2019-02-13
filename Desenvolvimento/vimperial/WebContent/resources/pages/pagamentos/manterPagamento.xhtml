@@ -11,16 +11,50 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Tipo de Mídias"
+			<p:panel id="basic" header="Pagamento"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="tipoMidiasTelefone" labelValue="Tipo de Mídia"
-					value="#{tipoMidiaBean.tipoMidia.tipoMidia}" validationRequired="true"
-					size="20" >
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					 <p:outputLabel for="locacao" value="Locação:" />
+					 <p:selectOneMenu id="locacao" filter="true" 
+					 value="#{pagamentoBean.pagamento.locacao}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
+						 <f:selectItem itemLabel="Selecionar Locação" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{pagamentoBean.locacoes}" 
+           		     			var="locacao" 
+           		     			itemValue="#{locacao}" 
+           		     			itemLabel="#{locacao.codLocacao} - #{locacao.cliente.nome}" />
+           		 	</p:selectOneMenu>
+					 <p:outputLabel for="tipoPagamento" value="Tipo de Pagamento:" />
+					 <p:selectOneMenu id="tipoPagamento" filter="true" 
+					 value="#{pagamentoBean.pagamento.tipoPagamento}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
+						 <f:selectItem itemLabel="Selecionar Tipo de Pagamento" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{pagamentoBean.tipoPagamentos}" 
+           		     			var="tipopagamento" 
+           		     			itemValue="#{tipopagamento}" 
+           		     			itemLabel="#{tipopagamento.tipoPagamento}" />
+           		 	</p:selectOneMenu>
+		</h:panelGrid>
+		
+						<tds:formInputText id="pagamentoValorTotal" labelValue="Valor Total"
+					value="#{pagamentoBean.pagamento.valorTotal}"
+					validationRequired="true" size="100">				
+				</tds:formInputText>
+		
+						<tds:formInputText id="pagamentoValorRecebido" labelValue="Valor Recebido"
+					value="#{pagamentoBean.pagamento.valorRecebido}"
+					validationRequired="true" size="100">				
 				</tds:formInputText>
 
+						<tds:formInputText id="pagamentoTroco" labelValue="Troco"
+					value="#{pagamentoBean.pagamento.troco}"
+					validationRequired="true" size="100">				
+				</tds:formInputText>
 
-				<p:commandButton action="#{tipoMidiaBean.salvar()}"
+				<p:commandButton action="#{pagamentoBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -29,21 +63,21 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Tipo de Mídias" style="margin-bottom:20px">
+			<p:panel id="basic" header="Pagamentos" style="margin-bottom:20px">
 
-				<p:dataTable var="tipoMidia" value="#{tipoMidiaBean.tipoMidias}"
+				<p:dataTable var="pagamento" value="#{pagamentoBean.pagamentos}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{tipoMidia.codMidia}" />
+						<h:outputText value="#{pagamento.codPagamento}" />
 					</p:column>
 
-					<p:column headerText="Tipo Mídia">
-						<h:outputText value="#{tipoMidia.tipoMidia}" />
+					<p:column headerText="Locação">
+						<h:outputText value="#{pagamento.locacao.codLocacao} - #{pagamento.locacao.cliente.nome}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{tipoMidiaBean.excluir()}"
+							action="#{pagamentoBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 

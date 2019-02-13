@@ -9,9 +9,11 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import br.ufpe.cin.vimperial.entidades.Filme;
+import br.ufpe.cin.vimperial.entidades.Locacao;
 import br.ufpe.cin.vimperial.entidades.LocacaoItem;
 import br.ufpe.cin.vimperial.service.FilmeService;
 import br.ufpe.cin.vimperial.service.LocacaoItemService;
+import br.ufpe.cin.vimperial.service.LocacaoService;
 
 
 
@@ -27,7 +29,10 @@ public class LocacaoItemBean implements Serializable{
 	private FilmeService filmeService;
 	private List<Filme> filmes;
 	
+	private LocacaoService locacaoService;
+	private List<Locacao> locacoes;
 
+	
 
 	@PostConstruct
 	public void init(){
@@ -38,6 +43,9 @@ public class LocacaoItemBean implements Serializable{
 		
 		filmeService = new FilmeService();
 		filmes = filmeService.listarTodos();
+		
+		locacaoService = new LocacaoService();
+		locacoes = locacaoService.listarTodos();
 
 	}
 
@@ -48,6 +56,7 @@ public class LocacaoItemBean implements Serializable{
 		locacaoItens = service.listarTodos();
 		locacaoItem = new LocacaoItem();
 		filmes = filmeService.listarTodos();
+		locacoes = locacaoService.listarTodos();
 		return "ok";
 
 	}
@@ -58,6 +67,7 @@ public class LocacaoItemBean implements Serializable{
 		locacaoItens = service.listarTodos();
 		locacaoItem = new LocacaoItem();
 		filmes = filmeService.listarTodos();
+		locacoes = locacaoService.listarTodos();
 		return "ok";
 	}
 	
@@ -87,6 +97,18 @@ public class LocacaoItemBean implements Serializable{
 
 	public void setFilmes(List<Filme> filmes) {
 		this.filmes = filmes;
+	}
+
+
+
+	public List<Locacao> getLocacoes() {
+		return locacoes;
+	}
+
+
+
+	public void setLocacoes(List<Locacao> locacoes) {
+		this.locacoes = locacoes;
 	}
 	
 	

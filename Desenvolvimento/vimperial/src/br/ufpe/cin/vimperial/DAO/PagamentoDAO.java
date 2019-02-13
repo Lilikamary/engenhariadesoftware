@@ -60,7 +60,7 @@ public class PagamentoDAO{
 		StringBuffer sql = new StringBuffer();
 		sql.append("SELECT p.codpagamento, p.locacao, p.valortotal, tp.codtipopagamento, tp.tipopagamento, p.valorrecebido, p.troco");
 		sql.append(" FROM pagamento p ");
-		sql.append(" INNER JOIN tipopagamento tp on tp.codpagamento = p.tipopagamento ");
+		sql.append(" INNER JOIN tipopagamento tp on tp.codtipopagamento = p.tipopagamento ");
 		List<Pagamento> pagamentos = new ArrayList<>();
 		try (Connection con = new JPAUtil().obterConexao();
 				PreparedStatement pstm = con.prepareStatement(sql.toString())) {

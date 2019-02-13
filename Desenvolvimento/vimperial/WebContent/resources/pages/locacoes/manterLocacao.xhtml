@@ -11,16 +11,88 @@
 
 		<h:form id="meuFormulario">
 
-			<p:panel id="basic" header="Cadastro de Tipo de Mídias"
+			<p:panel id="basic" header="Locações"
 				style="margin-bottom:20px">
 
-				<tds:formInputText id="tipoMidiasTelefone" labelValue="Tipo de Mídia"
-					value="#{tipoMidiaBean.tipoMidia.tipoMidia}" validationRequired="true"
-					size="20" >
+				 <p:tabView>
+				        <p:tab title="Locações">
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					 <p:outputLabel for="cliente" value="Cliente:" />
+					 <p:selectOneMenu id="cliente" filter="true" 
+					 value="#{dependenteBean.dependente.cliente}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
+						 <f:selectItem itemLabel="Selecionar Cliente" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{dependenteBean.clientes}" 
+           		     			var="cliente" 
+           		     			itemValue="#{cliente}" 
+           		     			itemLabel="#{cliente.nome}" />
+           		 	</p:selectOneMenu>
+           		 </h:panelGrid>	    
+           		 <tds:formInputText id="locacaoDataLocacao"
+					labelValue="Data de Locação"
+					value="#{locacaoBean.locacao.dataLocacao}"
+					validationRequired="true" >
+					
+					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
 				</tds:formInputText>
 
+           		 <tds:formInputText id="locacaoDataDevolucao"
+					labelValue="Data de Devolução"
+					value="#{locacaoBean.locacao.dataDevolucao}"
+					validationRequired="true" >
+					
+					<f:convertDateTime pattern="dd/MM/yyyy" for="input"/>
+				</tds:formInputText>
 
-				<p:commandButton action="#{tipoMidiaBean.salvar()}"
+           		 <h:outputText value="#{locacaoBean.locacao.multa}" title="Multa:" />
+           		 <p:commandButton action="#{locacaoBean.salvar()}"
+					icon=" ui-icon-disk" update="@form :registrosForm" />
+           		 
+				        </p:tab>
+				        <p:tab title="Itens">
+				<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+					 <p:outputLabel for="locacao" value="Locação:" />
+					 <p:selectOneMenu id="locacao" filter="true" 
+					 value="#{locacaoItemBean.locacaoItem.locacao}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
+						 <f:selectItem itemLabel="Selecionar Locação" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{locacaoItemBean.locacoes}" 
+           		     			var="locacao" 
+           		     			itemValue="#{locacao}" 
+           		     			itemLabel="#{locacao.codLocacao} - #{locacao.cliente.nome}" />
+           		 	</p:selectOneMenu>
+					 <p:outputLabel for="filme" value="Filme:" />
+					 <p:selectOneMenu id="filme" filter="true" 
+					 value="#{locacaoItemBean.locacaoItem.filme}" style="margin-bottom:10px"
+					 converter="simpleEntityConverter">					 
+						 <f:selectItem itemLabel="Selecionar Filme" itemValue="" />
+           		     	  <f:selectItems 
+           		     			value="#{locacaoItemBean.filmes}" 
+           		     			var="filme" 
+           		     			itemValue="#{filme}" 
+           		     			itemLabel="#{filme.tituloOriginal}" />
+           		 	</p:selectOneMenu>
+           		 </h:panelGrid>	    
+
+				<tds:formInputText id="locacaoItemValorLocacao" labelValue="Valor da Locação"
+					value="#{locacaoItemBean.locacaoItem.valorLocacao}"
+					validationRequired="true" size="100">				
+				</tds:formInputText>
+
+				<tds:formInputText id="locacaoItemValorMulta" labelValue="Valor Multa"
+					value="#{locacaoItemBean.locacaoItem.valorMulta}"
+					validationRequired="true" size="100">				
+				</tds:formInputText>
+
+				<tds:formInputText id="locacaoItemValorTotal" labelValue="Valor Total do Item"
+					value="#{locacaoItemBean.locacaoItem.valorTotal}"
+					validationRequired="true" size="100">				
+				</tds:formInputText>
+				        </p:tab>
+				    </p:tabView>
+				<p:commandButton action="#{locacaoItemBean.salvar()}"
 					icon=" ui-icon-disk" update="@form :registrosForm" />
    
 			</p:panel>
@@ -29,21 +101,21 @@
 
 		<h:form id="registrosForm">
 
-			<p:panel id="basic" header="Tipo de Mídias" style="margin-bottom:20px">
+			<p:panel id="basic" header="Locação" style="margin-bottom:20px">
 
-				<p:dataTable var="tipoMidia" value="#{tipoMidiaBean.tipoMidias}"
+				<p:dataTable var="locacao" value="#{locacaoBean.locacoes}"
 					emptyMessage="Nenhum Registro">
 					<p:column headerText="Código">
-						<h:outputText value="#{tipoMidia.codMidia}" />
+						<h:outputText value="#{locacao.codLocacao}" />
 					</p:column>
 
-					<p:column headerText="Tipo Mídia">
-						<h:outputText value="#{tipoMidia.tipoMidia}" />
+					<p:column headerText="Cliente">
+						<h:outputText value="#{locacao.cliente.nome}" />
 					</p:column>
 
 					<p:column headerText="Ações">
 						<p:commandButton
-							action="#{tipoMidiaBean.excluir()}"
+							action="#{locacaoBean.excluir()}"
 							icon=" ui-icon-trash" title="Excluir"
 							update="@form :meuFormulario">
 
