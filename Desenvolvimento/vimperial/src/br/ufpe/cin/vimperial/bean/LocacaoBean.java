@@ -70,5 +70,19 @@ public class LocacaoBean implements Serializable{
 	public void setLocacoes(List<Locacao> locacoes) {
 		this.locacoes = locacoes;
 	}
+
+
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
+	
+	
 	
 }

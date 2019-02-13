@@ -6,25 +6,23 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
 import br.ufpe.cin.vimperial.entidades.Filme;
-import br.ufpe.cin.vimperial.entidades.Telefone;
-import br.ufpe.cin.vimperial.service.ClienteService;
+import br.ufpe.cin.vimperial.entidades.LocacaoItem;
 import br.ufpe.cin.vimperial.service.FilmeService;
-import br.ufpe.cin.vimperial.service.TelefoneService;
+import br.ufpe.cin.vimperial.service.LocacaoItemService;
 
 
-@ManagedBean(name="telefoneBean")
+
+@ManagedBean(name="locacaoItemBean")
 @SessionScoped
 public class LocacaoItemBean implements Serializable{
 	
 
-	private Telefone telefone;
-	private TelefoneService service;
-	private List<Telefone> telefones;
+	private LocacaoItem locacaoItem;
+	private LocacaoItemService service;
+	private List<LocacaoItem> locacaoItens;
 	
 	private FilmeService filmeService;
 	private List<Filme> filmes;
@@ -34,9 +32,9 @@ public class LocacaoItemBean implements Serializable{
 	@PostConstruct
 	public void init(){
 		
-		telefone = new Telefone();
-		service = new TelefoneService();
-		telefones = service.listarTodos();
+		locacaoItem = new LocacaoItem();
+		service = new LocacaoItemService();
+		locacaoItens = service.listarTodos();
 		
 		filmeService = new FilmeService();
 		filmes = filmeService.listarTodos();
@@ -46,35 +44,49 @@ public class LocacaoItemBean implements Serializable{
 
 	
 	public String salvar(){
-		service.incluir(telefone);
-		telefones = service.listarTodos();
-		telefone = new Telefone();
+		service.incluir(locacaoItem);
+		locacaoItens = service.listarTodos();
+		locacaoItem = new LocacaoItem();
 		return "ok";
 
 	}
 	
 	
 	public String excluir(){
-		this.service.excluir(telefone);
-		telefones = service.listarTodos();
-		telefone = new Telefone();
+		this.service.excluir(locacaoItem);
+		locacaoItens = service.listarTodos();
+		locacaoItem = new LocacaoItem();
 		return "ok";
 	}
 	
-	public Telefone getTelefone() {
-		return telefone;
+	public LocacaoItem getLocacaoItem() {
+		return locacaoItem;
 	}
 
-	public void setTelefone(Telefone telefone) {
-		this.telefone = telefone;
+	public void setLocacaoItem(LocacaoItem locacaoItem) {
+		this.locacaoItem = locacaoItem;
 	}
 
-	public List<Telefone> getTelefones() {
-		return telefones;
+	public List<LocacaoItem> getLocacaoItens() {
+		return locacaoItens;
 	}
 
-	public void setTelefones(List<Telefone> telefones) {
-		this.telefones = telefones;
+	public void setLocacaoItens(List<LocacaoItem> locacaoItens) {
+		this.locacaoItens = locacaoItens;
 	}
+
+
+
+	public List<Filme> getFilmes() {
+		return filmes;
+	}
+
+
+
+	public void setFilmes(List<Filme> filmes) {
+		this.filmes = filmes;
+	}
+	
+	
 	
 }
