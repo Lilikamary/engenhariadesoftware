@@ -51,6 +51,9 @@ public class DistribuidoraBean implements Serializable{
 		service.incluir(distribuidora);
 		distribuidoras = service.listarTodos();
 		distribuidora = new Distribuidora();
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
+
 		return "ok";
 
 	}
@@ -60,6 +63,9 @@ public class DistribuidoraBean implements Serializable{
 		this.service.excluir(distribuidora);
 		distribuidoras = service.listarTodos();
 		distribuidora = new Distribuidora();
+		telefones = telefoneService.listarTodos();
+		enderecos = enderecoService.listarTodos();
+
 		return "ok";
 	}
 	

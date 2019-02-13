@@ -47,6 +47,7 @@ public class FilmeBean implements Serializable{
 		
 		tipoMidiaService = new TipoMidiaService();
 		tipoMidias = tipoMidiaService.listarTodos();
+
 	}
 
 
@@ -55,6 +56,9 @@ public class FilmeBean implements Serializable{
 		service.incluir(filme);
 		filmes = service.listarTodos();
 		filme = new Filme();
+		tipoMidias = tipoMidiaService.listarTodos();
+		distribuidoras = distribuidoraService.listarTodos();
+
 		return "ok";
 
 	}
@@ -64,6 +68,9 @@ public class FilmeBean implements Serializable{
 		this.service.excluir(filme);
 		filmes = service.listarTodos();
 		filme = new Filme();
+		tipoMidias = tipoMidiaService.listarTodos();
+		distribuidoras = distribuidoraService.listarTodos();
+
 		return "ok";
 	}
 	

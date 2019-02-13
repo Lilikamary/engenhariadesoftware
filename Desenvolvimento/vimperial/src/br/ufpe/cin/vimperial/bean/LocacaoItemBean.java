@@ -47,6 +47,7 @@ public class LocacaoItemBean implements Serializable{
 		service.incluir(locacaoItem);
 		locacaoItens = service.listarTodos();
 		locacaoItem = new LocacaoItem();
+		filmes = filmeService.listarTodos();
 		return "ok";
 
 	}
@@ -56,6 +57,7 @@ public class LocacaoItemBean implements Serializable{
 		this.service.excluir(locacaoItem);
 		locacaoItens = service.listarTodos();
 		locacaoItem = new LocacaoItem();
+		filmes = filmeService.listarTodos();
 		return "ok";
 	}
 	

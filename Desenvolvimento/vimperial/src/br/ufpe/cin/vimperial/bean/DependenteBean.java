@@ -42,6 +42,7 @@ public class DependenteBean implements Serializable{
 		service.incluir(dependente);
 		dependentes = service.listarTodos();
 		dependente = new Dependente();
+		clientes = clienteService.listarTodos();
 		return "ok";
 
 	}
@@ -51,6 +52,7 @@ public class DependenteBean implements Serializable{
 		this.service.excluir(dependente);
 		dependentes = service.listarTodos();
 		dependente = new Dependente();
+		clientes = clienteService.listarTodos();
 		return "ok";
 	}
 	

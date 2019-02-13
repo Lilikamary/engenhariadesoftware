@@ -43,6 +43,7 @@ public class LocacaoBean implements Serializable{
 		service.incluir(locacao);
 		locacoes = service.listarTodos();
 		locacao = new Locacao();
+		clientes = clienteService.listarTodos();
 		return "ok";
 
 	}
@@ -52,6 +53,7 @@ public class LocacaoBean implements Serializable{
 		this.service.excluir(locacao);
 		locacoes = service.listarTodos();
 		locacao = new Locacao();
+		clientes = clienteService.listarTodos();
 		return "ok";
 	}
 	

@@ -49,7 +49,7 @@ public class PagamentoBean implements Serializable{
 		
 		tipoPagamentoService = new TipoPagamentoService();
 		tipoPagamentos = tipoPagamentoService.listarTodos();
-
+		
 		
 	}
 
@@ -59,6 +59,8 @@ public class PagamentoBean implements Serializable{
 		service.incluir(pagamento);
 		pagamentos = service.listarTodos();
 		pagamento = new Pagamento();
+		tipoPagamentos = tipoPagamentoService.listarTodos();
+		locacoes = locacaoService.listarTodos();
 		return "ok";
 
 	}
@@ -68,6 +70,8 @@ public class PagamentoBean implements Serializable{
 		this.service.excluir(pagamento);
 		pagamentos = service.listarTodos();
 		pagamento = new Pagamento();
+		tipoPagamentos = tipoPagamentoService.listarTodos();
+		locacoes = locacaoService.listarTodos();
 		return "ok";
 	}
 	
