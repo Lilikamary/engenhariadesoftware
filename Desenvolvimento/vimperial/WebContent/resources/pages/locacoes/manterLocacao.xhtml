@@ -30,11 +30,11 @@
            		 	</p:selectOneMenu>
            		 </h:panelGrid>	    
            		 
-           		<h:outputText id="dataLocacao"   value="#{locacaoBean.locacao.dataLocacao}" />
+           		<h:outputText id="dataLocacao"  title="Data Locação: " value="#{locacaoBean.locacao.dataLocacao}" />
 					
 				<f:convertDateTime pattern="dd/MM/yyyy" for="dataLocacao"/>
 
-           		<h:outputText id="dataDevolucao"   value="#{locacaoBean.locacao.dataDevolucao}" />
+           		<h:outputText id="dataDevolucao"   title="Data Devolução: " value="#{locacaoBean.locacao.dataDevolucao}" />
 					
 				<f:convertDateTime pattern="dd/MM/yyyy" for="dataDevolucao"/>
 
@@ -69,6 +69,14 @@
            		     			itemLabel="#{filme.tituloOriginal}" />
            		 	</p:selectOneMenu>
            		 </h:panelGrid>	    
+           		 
+           		<h:outputText id="dataLocacaoItem"  title="Data Locação Item: " value="#{locacaoItemBean.locacaoItem.dataLocacaoItem}" />
+					
+				<f:convertDateTime pattern="dd/MM/yyyy" for="dataLocacaoItem"/>
+
+           		<h:outputText id="dataDevolucaoItem"  title="Data Devolução Item: "  value="#{locacaoItemBean.locacaoItem.dataDevolucaoItem}" />
+					
+				<f:convertDateTime pattern="dd/MM/yyyy" for="dataDevolucao"/>
 
 				<tds:formInputText id="locacaoItemValorLocacao" labelValue="Valor da Locação"
 					value="#{locacaoItemBean.locacaoItem.valorLocacao}"

@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +22,8 @@ public class LocacaoItemDAO{
 	public void inserir(LocacaoItem locacaoItem) {
 		
 			StringBuffer sql = new StringBuffer();
-			sql.append("INSERT INTO locacaoitem(locacao, filme, valorlocacao, valormulta, valortotal) ");
-			sql.append("     VALUES ( ?, ?, ?, ?, ? ) ");
+			sql.append("INSERT INTO locacaoitem(locacao, filme, valorlocacao, valormulta, valortotal, datalocacaoitem, datadevolucaoitem) ");
+			sql.append("     VALUES ( ?, ?, ?, ?, ?, ?, ? ) ");
 			// try-with-resources - a partir do java 7
 			try (Connection con = new JPAUtil().obterConexao();
 					PreparedStatement pstm = con.prepareStatement(sql.toString(),
@@ -32,6 +33,8 @@ public class LocacaoItemDAO{
 				pstm.setFloat(3, locacaoItem.getValorLocacao());
 				pstm.setFloat(4, locacaoItem.getValorMulta());
 				pstm.setFloat(5, locacaoItem.getValorTotal());
+				pstm.setTimestamp(6, new Timestamp(locacaoItem.getDataLocacaoItem().getTime()));
+				pstm.setTimestamp(7, new Timestamp(locacaoItem.getDataDevolucaoItem().getTime()));
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
 				if (rs.next()) { // verifico se o banco retornou
@@ -60,7 +63,7 @@ public class LocacaoItemDAO{
 		public List<LocacaoItem> listarTodos(){
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("SELECT li.codlocacaoitem, l.codlocacao, f.codfilme, f.titulooriginal, li.valorlocacao, li.valormulta, li.valortotal ");
+		sql.append("SELECT li.codlocacaoitem, l.codlocacao, f.codfilme, f.titulooriginal, li.valorlocacao, li.valormulta, li.valortotal, li.datalocacaoitem, li.datadevolucaoitem ");
 		sql.append(" FROM locacaoitem li ");
 		sql.append(" INNER JOIN locacao l on l.codlocacao = li.locacao ");
 		sql.append(" INNER JOIN filme f on f.codfilme = li.filme ");
@@ -81,6 +84,8 @@ public class LocacaoItemDAO{
 				locacaoItem.setValorLocacao(rs.getFloat("li.valorlocacao"));
 				locacaoItem.setValorMulta(rs.getFloat("li.valormulta"));
 				locacaoItem.setValorTotal(rs.getFloat("li.valortotal"));
+				locacaoItem.setDataLocacaoItemBanco(rs.getDate("li.datadevolucaoitem"));
+				locacaoItem.setDataDevolucaoItemBanco(rs.getDate("li.datalocacaoitem"));
 				locacaoitens.add(locacaoItem);
 			}
 			rs.close();

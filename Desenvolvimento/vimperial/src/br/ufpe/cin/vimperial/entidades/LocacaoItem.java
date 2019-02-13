@@ -1,5 +1,8 @@
 package br.ufpe.cin.vimperial.entidades;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class LocacaoItem {
 	
 	private Long codLocacaoItem;
@@ -8,6 +11,8 @@ public class LocacaoItem {
 	private float valorLocacao;
 	private float valorMulta;
 	private float valorTotal;
+	private Date dataLocacaoItem;
+	private Date dataDevolucaoItem;
 	
 	
 	
@@ -47,5 +52,36 @@ public class LocacaoItem {
 	public void setValorTotal(float valorTotal) {
 		this.valorTotal = valorTotal;
 	}
+	public Date getDataLocacaoItem() {
+		return dataLocacaoItem;
+	}
+	public void setDataLocacaoItem(Date dataLocacaoItem) {
+		this.dataLocacaoItem = new Date();
+	}
+	
+	
+	public Date getDataDevolucaoItem() {
+		return dataDevolucaoItem;
+	}
+	
+	public void setDataLocacaoItemBanco(Date dataLocacaoItem) {
+		this.dataLocacaoItem = dataLocacaoItem;
+	}
+	
+	public void setDataDevolucaoItemBanco(Date dataDevolucaoItem) {
+		this.dataDevolucaoItem = dataDevolucaoItem;
+	}
+	
+	public void setDataDevolucaoItem(int dias) {
+		this.dataDevolucaoItem = somarData(dias, dataLocacaoItem);	
+		
+	}
+	
+	 public static Date somarData (int dias,Date data) {
+	       Calendar calendar = Calendar.getInstance();
+	       calendar.setTime(data);
+	       calendar.add(Calendar.DATE, dias);
+	       return calendar.getTime();
+	    };
 
 }
