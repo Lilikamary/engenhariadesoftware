@@ -30,7 +30,7 @@ public class DistribuidoraDAO {
 							Statement.RETURN_GENERATED_KEYS)) {
 				pstm.setString(1, distribuidora.getRazaoSocial());
 				pstm.setString(2, distribuidora.getResponsavel());
-				pstm.setLong(3, distribuidora.getTelefone().getCodTelefone());			
+				pstm.setString(3, distribuidora.getTelefone());			
 				pstm.setLong(4, distribuidora.getEndereco().getCodEndereco());				
 				pstm.execute();
 				ResultSet rs = pstm.getGeneratedKeys(); // retorna o ID gerado
@@ -68,15 +68,13 @@ public class DistribuidoraDAO {
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
 				Distribuidora distribuidora = new Distribuidora();
-				Telefone telefone = new Telefone();
 				Endereco endereco = new Endereco();
 				distribuidora.setCodDistribuidora(rs.getLong("coddistribuidora"));
 				distribuidora.setRazaoSocial(rs.getString("razaosocial"));
 				distribuidora.setResponsavel(rs.getString("responsavel"));
-				telefone.setCodTelefone(rs.getLong("telefone"));
 				endereco.setCodEndereco(rs.getLong("endereco"));
 				distribuidora.setEndereco(endereco);
-				distribuidora.setTelefone(telefone);
+				distribuidora.setTelefone(rs.getString("telefone"));
 				distribuidoras.add(distribuidora);
 			}
 			rs.close();

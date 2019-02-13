@@ -22,7 +22,7 @@ public class Cliente implements BaseEntity,Serializable {
 	
 	private Endereco endereco;
 	
-	private Telefone telefone;
+	private String telefone;
 	
 	public Long getCodCliente() {
 		return codCliente;
@@ -88,11 +88,11 @@ public class Cliente implements BaseEntity,Serializable {
 		this.endereco = endereco;
 	}
 
-	public Telefone getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Telefone telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

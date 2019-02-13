@@ -17,7 +17,7 @@ public class Distribuidora implements BaseEntity, Serializable {
 	
 	private String razaoSocial;
 	private String responsavel;
-	private Telefone telefone;
+	private String telefone;
 	
 	private Endereco endereco;
 
@@ -45,11 +45,11 @@ public class Distribuidora implements BaseEntity, Serializable {
 		this.responsavel = responsavel;
 	}
 
-	public Telefone getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Telefone telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 

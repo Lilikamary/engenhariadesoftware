@@ -52,6 +52,10 @@
 
 				<tds:formInputText id="clientesLocalTrabalho" labelValue="Local de Trabalho"
 					value="#{clienteBean.cliente.localTrabalho}" validationRequired="true"  size="100"/>
+					
+				
+				<tds:formInputText id="clientesTelefone" labelValue="Telefone"
+					value="#{clienteBean.cliente.telefone}" validationRequired="true"  size="10"/>
 
 			<h:panelGrid columns="2" cellpadding="5">
 				 <p:outputLabel value="Endereço:" />
@@ -65,18 +69,7 @@
            		     			itemValue="#{endereco}" 
            		     			itemLabel="#{endereco.logradouro}, #{endereco.numero} - #{endereco.cidade}" />
            		 </p:selectOneMenu>    
-           		 
-				 <p:outputLabel value="Telefone:" />
-				 <p:selectOneMenu id="clientesTelefone" filter="true" 
-				 value="#{clienteBean.cliente.telefone}" style="margin-bottom:10px"
-				 converter="simpleEntityConverter">					 
-					 <f:selectItem itemLabel="Selecionar Telefone" itemValue="" />
-           		     <f:selectItems 
-           		     			value="#{clienteBean.telefones}" 
-           		     			var="telefone" 
-           		     			itemValue="#{telefone}" 
-           		     			itemLabel="#{telefone.telefone}" />
-           		 </p:selectOneMenu>    
+           		
 
 			</h:panelGrid>
 

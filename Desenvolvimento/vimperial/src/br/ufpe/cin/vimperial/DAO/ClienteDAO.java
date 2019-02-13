@@ -32,7 +32,7 @@ public class ClienteDAO {
 				pstm.setString(4, cliente.getSexo());
 				pstm.setString(5, cliente.getEmail());
 				pstm.setString(6, cliente.getLocalTrabalho());
-				pstm.setLong(7, cliente.getTelefone().getCodTelefone());
+				pstm.setString(7, cliente.getTelefone());
 				pstm.setLong(8, cliente.getEndereco().getCodEndereco());
 				pstm.setString(9, cliente.getAtivo());
 				pstm.execute();
@@ -72,7 +72,6 @@ public class ClienteDAO {
 			while (rs.next()) {
 				Cliente cliente = new Cliente();
 				Endereco endereco = new Endereco();
-				Telefone telefone = new Telefone();
 				cliente.setCodCliente(rs.getLong("codcliente"));
 				cliente.setNome(rs.getString("nome"));
 				cliente.setCpf(rs.getString("cpf"));
@@ -81,9 +80,8 @@ public class ClienteDAO {
 				cliente.setLocalTrabalho(rs.getString("localtrabalho"));
 				cliente.setSexo(rs.getString("sexo"));
 				endereco.setCodEndereco(rs.getLong("endereco"));
-				telefone.setCodTelefone(rs.getLong("telefone"));
 				cliente.setEndereco(endereco);
-				cliente.setTelefone(telefone);
+				cliente.setTelefone(rs.getString("telefone"));
 				cliente.setAtivo(rs.getString("ativo"));
 				clientes.add(cliente);
 			}
