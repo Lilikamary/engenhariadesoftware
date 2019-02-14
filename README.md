@@ -2,14 +2,13 @@ Vídeo Locadora Imperial
 
 - Justificativa do projeto
 
-Numa organização atualmente é fundamental o uso de um sistema de informação, sendo capaz de gerar valor para a mesma, assim como automatizar processos e realizar atividades fundamentais para registros e gerência da organização. Sendo assim, o projeto de desenvolvimento de um software para Vídeo Locadora Imperial é imprescindível a utilização dos princípios da Engenharia de Software.
-
-Conforme os requisitos da Vídeo Locadora Imperial foi possível a realização de um projeto de software, afim de atender as necessidade do cliente e que possa está contribuindo para o seu processo de informatização e desenvolvimento.
-
+Atualmente é fundamental o uso de um sistema de informação por empresas, sendo capaz de gerar valor como também automatizar processos e realizar atividades fundamentais para registros e gerência da organização.
+No momento, a locadora Imperial não possui nenhum sistema informatizado e todo o processo de locação de filmes é realizado manualmente através de uma planilha no excel. Com o crescimento da empresa, os proprietários sentiram a necessidade de automatizar seus serviços para oferecer um melhor atendimento aos clientes.
 
 - Descrição do Produto
 
-Trata-se de um sistema de informação com a finalidade de apoiar atividades realizada numa Vídeo Locadora, como empréstimos e devolução de itens e reserva de filmes. Conforme os requisitos do cliente o sistema de Vídeo Locadora poderá realizar algumas funcionalidades como consultas, gerenciar clientes, registrar pagamentos, cadastrar fornecedores e entre outras.
+Trata-se de um sistema de informação com a finalidade de apoiar atividades realizadas em uma Vídeo Locadora, como locações e devoluções de itens, busca e reserva de filmes entre outros requisitos solicitados pelo cliente.
+
 
 
 - Especificaçõs dos membros da Equipe
