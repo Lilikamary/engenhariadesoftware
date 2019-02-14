@@ -1,0 +1,21 @@
+# language: pt
+  @ClienteTeste
+	Funcionalidade: Cadastrar clientes
+	Possibilidade do cliente
+	Realizar cadastro no sistema
+	Para poder gerenciar suas tarefas
+	Contexto: Formulário
+	Dado que o cliente esteja no formulário de cadastro
+	Cenario: Cadastro simples
+	E informe o seguinte dados:
+	|codcliente| 10 | 
+	| nome  | 'Lilian Maria Goncalves'  |
+	| cpf	| '999.999.999-99' |
+	| datanascimento| '99/99/9999' |
+	| sexo | 'F' |
+	| email | 'lilika.mary@gmail.com' |
+	| localTrabalho | 'casa' |
+	| ativo | 'Ativado' |
+	| endereco | 2 |
+	| telefone | '9999-9999'|
+

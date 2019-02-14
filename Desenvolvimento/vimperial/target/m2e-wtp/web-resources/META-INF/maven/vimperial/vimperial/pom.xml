@@ -16,6 +16,12 @@
     <version>2.1.29-11</version>
 </dependency>
 <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>4.2.3</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
     <groupId>javax</groupId>
     <artifactId>javaee-web-api</artifactId>
     <version>7.0</version>
